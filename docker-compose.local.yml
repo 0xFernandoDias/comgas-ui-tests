@@ -1,0 +1,10 @@
+networks:
+  comgas-app-network:
+services:
+  comgas-ui:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: comgas-ui
+    ports:
+      - '3000:3000'
