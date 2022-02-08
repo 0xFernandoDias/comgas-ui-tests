@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 networks:
   comgas-network:
 services:
@@ -9,6 +9,6 @@ services:
     image: comgas-ui
     container_name: comgas-ui-container
     ports:
-      - "3000:3000"
+      - '3000:3000'
     networks:
       - comgas-network

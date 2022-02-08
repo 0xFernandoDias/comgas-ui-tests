@@ -1,8 +1,8 @@
-import React from "react";
-import { Box } from "@chakra-ui/react";
+import React from 'react'
+import { Box } from '@chakra-ui/react'
 
 export interface ButtonProps {
-  text: String;
+  text: string
 }
 
 export const Button = ({ text }: ButtonProps) => {
@@ -18,5 +18,5 @@ export const Button = ({ text }: ButtonProps) => {
     >
       {text}
     </Box>
-  );
-};
+  )
+}

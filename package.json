@@ -7,7 +7,7 @@
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint --fix --ext .ts,.tsx",
+    "lint": "eslint . --fix --ext .ts,.tsx",
     "format": "prettier --write .",
     "prepare": "husky install"
   },
