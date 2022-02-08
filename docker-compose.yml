@@ -1,10 +1,14 @@
+version: "3.9"
 networks:
-  comgas-app-network:
+  comgas-network:
 services:
   comgas-ui:
     build:
       context: ./
       dockerfile: Dockerfile
     image: comgas-ui
+    container_name: comgas-ui-container
     ports:
       - "3000:3000"
+    networks:
+      - comgas-network
