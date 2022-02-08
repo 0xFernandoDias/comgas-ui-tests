@@ -1,15 +1,18 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Button } from '../../components/Button'
+import { Meta, Story } from '@storybook/react'
+import { Button, ButtonProps } from '../../components/Button'
 
-export default {
+const meta: Meta = {
   title: 'Button',
   component: Button,
-} as ComponentMeta<typeof Button>
+}
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+export default meta
+
+const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 export const FirstStory = Template.bind({})
+
 FirstStory.args = {
   text: 'Começar!',
 }
