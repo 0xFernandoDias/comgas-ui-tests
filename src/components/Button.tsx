@@ -1,11 +1,11 @@
-import React, { HTMLAttributes } from 'react'
+import React from 'react'
 import { Box } from '@chakra-ui/react'
 
-export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps {
   text: string
 }
 
-export const Button = ({ text }: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = ({ text }) => {
   return (
     <Box
       h="48px"

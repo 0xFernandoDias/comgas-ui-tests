@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react'
 import { Button, ButtonProps } from '../../components/Button'
 
 const meta: Meta = {
-  title: 'Button',
+  title: 'Components/Button',
   component: Button,
 }
 
