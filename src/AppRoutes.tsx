@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Statusbar } from './components'
+import { FormActions, useForm } from './contexts/FormContext'
 import {
   Plans,
   PlanDetails,
@@ -17,11 +18,134 @@ import {
 } from './pages'
 
 export const AppRoutes = () => {
-  // useForm to props
-  // formActions to props
-  // useEffect to response
+  const { state, dispatch } = useForm()
+
+  React.useEffect(() => {
+    dispatch({
+      type: FormActions.setRequest,
+      payload: {
+        plans: [
+          {
+            name: 'Fogão',
+            details: [
+              'Gás sem interrupção',
+              'Menos tempo de cocção',
+              'Panelas mais conservadas',
+            ],
+            description:
+              'Ideal pra transformar as refeições em grandes memórias.',
+            items: ['Ligação de 1 fogão', 'Seguro Extendido'],
+            price: '2099.40',
+            complementaryServices: [
+              {
+                name: 'Cleaning Service',
+                price: '75.90',
+              },
+              {
+                name: 'insurance',
+                price: '5.90',
+              },
+            ],
+            technicalDetails: [''],
+            installations: [
+              { name: 'Tubulação embutida', price: '450.00' },
+              { name: 'Tubulação aparente', price: '350.00' },
+              'Não quero instalação da Comgás',
+            ],
+          },
+          {
+            name: 'Banho',
+            details: [
+              'Gás sem interrupção',
+              'Menos tempo de cocção',
+              'Panelas mais conservadas',
+            ],
+            description:
+              'Ideal pra transformar as refeições em grandes memórias.',
+            items: ['Ligação de 1 fogão', 'Seguro Extendido'],
+            price: '2099.40',
+            complementaryServices: [
+              {
+                name: 'Cleaning Service',
+                price: '75.90',
+              },
+              {
+                name: 'insurance',
+                price: '5.90',
+              },
+            ],
+            technicalDetails: [''],
+            installations: [
+              { name: 'Tubulação embutida', price: '450.00' },
+              { name: 'Tubulação aparente', price: '350.00' },
+              'Não quero instalação da Comgás',
+            ],
+          },
+          {
+            name: 'Banho e torneira',
+            details: [
+              'Gás sem interrupção',
+              'Menos tempo de cocção',
+              'Panelas mais conservadas',
+            ],
+            description:
+              'Ideal pra transformar as refeições em grandes memórias.',
+            items: ['Ligação de 1 fogão', 'Seguro Extendido'],
+            price: '2099.40',
+            complementaryServices: [
+              {
+                name: 'Cleaning Service',
+                price: '75.90',
+              },
+              {
+                name: 'insurance',
+                price: '5.90',
+              },
+            ],
+            technicalDetails: [''],
+            installations: [
+              { name: 'Tubulação embutida', price: '450.00' },
+              { name: 'Tubulação aparente', price: '350.00' },
+              'Não quero instalação da Comgás',
+            ],
+          },
+          {
+            name: 'Piscina',
+            details: [
+              'Gás sem interrupção',
+              'Menos tempo de cocção',
+              'Panelas mais conservadas',
+            ],
+            description:
+              'Ideal pra transformar as refeições em grandes memórias.',
+            items: ['Ligação de 1 fogão', 'Seguro Extendido'],
+            price: '2099.40',
+            complementaryServices: [
+              {
+                name: 'Cleaning Service',
+                price: '75.90',
+              },
+              {
+                name: 'insurance',
+                price: '5.90',
+              },
+            ],
+            technicalDetails: [''],
+            installations: [
+              { name: 'Tubulação embutida', price: '450.00' },
+              { name: 'Tubulação aparente', price: '350.00' },
+              'Não quero instalação da Comgás',
+            ],
+          },
+        ],
+        dates: null,
+      },
+    })
+  })
 
   return (
+    // Container as theme
+
     <BrowserRouter>
       <Routes>
         <>

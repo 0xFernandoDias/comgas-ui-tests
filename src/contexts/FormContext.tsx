@@ -1,110 +1,118 @@
 import React from 'react'
 
-interface IRequest {
-  // Fetch
-  texts: object
-  plans: planType[]
-  installations: string[]
-  dates: Date | null
-}
-
-interface IResponse {
-  // User Input
+interface iState {
+  request: {
+    plans: {
+      name: string
+      details: string[]
+      description: string
+      items: string[]
+      price: string
+      complementaryServices: {
+        name: string
+        price: string
+      }[]
+      technicalDetails: string[]
+      installations: {
+        name: string
+        price: string
+      }[]
+    }[]
+    dates: Date | null
+  }
   currentStep: number
-  plan: string
-  zipCode: string
-  register: registerType
+  planName: string
   installation: string
-  date: Date | null
-}
-
-interface State {
-  request: IRequest
-  response: IResponse
-}
-
-interface planType {
-  name: string
-  details: string
-  description: string
-  items: string[]
-  prices: string[]
-  complementaryServices: string[]
-  technicalDetails: string[]
-}
-
-interface registerType {
   name: string
   email: string
   telephone: string
+  zipCode: string
+  date: Date | null
 }
 
-interface ContextType {
-  state: State
-  dispatch: (action: Action) => void
-}
-
-interface Action {
+interface iAction {
   type: FormActions
   payload: any
 }
 
-interface FormProviderProps {
+interface iContext {
+  state: iState
+  dispatch: (action: iAction) => void
+}
+
+interface iFormProviderProps {
   children: React.ReactNode
 }
 
-const initialData: State = {
+const initialData: iState = {
   request: {
-    texts: {},
     plans: [
       {
         name: '',
-        details: '',
+        details: [''],
         description: '',
         items: [''],
-        prices: [''],
-        complementaryServices: [''],
+        price: '',
+        complementaryServices: [{ name: '', price: '' }],
         technicalDetails: [''],
+        installations: [{ name: '', price: '' }],
       },
     ],
-    installations: [''],
     dates: null,
   },
-  response: {
-    currentStep: 0,
-    plan: '',
-    zipCode: '',
-    register: {
-      name: '',
-      email: '',
-      telephone: '',
-    },
-    installation: '',
-    date: null,
-  },
+  currentStep: 0,
+  planName: '',
+  installation: '',
+  name: '',
+  email: '',
+  telephone: '',
+  zipCode: '',
+  date: null,
 }
 
-const FormContext = React.createContext<ContextType | undefined>(undefined)
+const FormContext = React.createContext<iContext | undefined>(undefined)
 
 export enum FormActions {
   setRequest,
-  setResponse,
+  setCurrentStep,
+  setPlanName,
+  setInstallation,
+  setName,
+  setEmail,
+  setTelephone,
+  setZipCode,
+  setDate,
 }
 
-const formReducer = (state: State, action: Action) => {
+const formReducer = (state: iState, action: iAction) => {
   switch (action.type) {
     case FormActions.setRequest:
       return { ...state, request: action.payload }
-    case FormActions.setResponse:
-      return { ...state, response: action.payload }
+    case FormActions.setCurrentStep:
+      return { ...state, currentStep: action.payload }
+    case FormActions.setPlanName:
+      return { ...state, planName: action.payload }
+    case FormActions.setInstallation:
+      return { ...state, installation: action.payload }
+    case FormActions.setName:
+      return { ...state, name: action.payload }
+    case FormActions.setEmail:
+      return { ...state, email: action.payload }
+    case FormActions.setTelephone:
+      return { ...state, telephone: action.payload }
+    case FormActions.setZipCode:
+      return { ...state, zipCode: action.payload }
+    case FormActions.setDate:
+      return { ...state, date: action.payload }
     default:
       return state
   }
 }
 
-export const FormProvider = ({ children }: FormProviderProps) => {
+export const FormProvider = ({ children }: iFormProviderProps) => {
   const [state, dispatch] = React.useReducer(formReducer, initialData)
   const value = { state, dispatch }
+
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>
 }
 
