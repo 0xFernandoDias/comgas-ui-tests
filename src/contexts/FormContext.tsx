@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode, createContext, useReducer, useContext } from 'react'
 
 interface iState {
   request: {
@@ -21,7 +21,7 @@ interface iState {
     dates: Date | null
   }
   currentStep: number
-  planName: string
+  plan: string
   installation: string
   name: string
   email: string
@@ -41,7 +41,7 @@ interface iContext {
 }
 
 interface iFormProviderProps {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const initialData: iState = {
@@ -61,7 +61,7 @@ const initialData: iState = {
     dates: null,
   },
   currentStep: 0,
-  planName: '',
+  plan: '',
   installation: '',
   name: '',
   email: '',
@@ -70,12 +70,12 @@ const initialData: iState = {
   date: null,
 }
 
-const FormContext = React.createContext<iContext | undefined>(undefined)
+const FormContext = createContext<iContext | undefined>(undefined)
 
 export enum FormActions {
   setRequest,
   setCurrentStep,
-  setPlanName,
+  setPlan,
   setInstallation,
   setName,
   setEmail,
@@ -90,8 +90,8 @@ const formReducer = (state: iState, action: iAction) => {
       return { ...state, request: action.payload }
     case FormActions.setCurrentStep:
       return { ...state, currentStep: action.payload }
-    case FormActions.setPlanName:
-      return { ...state, planName: action.payload }
+    case FormActions.setPlan:
+      return { ...state, plan: action.payload }
     case FormActions.setInstallation:
       return { ...state, installation: action.payload }
     case FormActions.setName:
@@ -110,14 +110,14 @@ const formReducer = (state: iState, action: iAction) => {
 }
 
 export const FormProvider = ({ children }: iFormProviderProps) => {
-  const [state, dispatch] = React.useReducer(formReducer, initialData)
+  const [state, dispatch] = useReducer(formReducer, initialData)
   const value = { state, dispatch }
 
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>
 }
 
 export const useForm = () => {
-  const context = React.useContext(FormContext)
+  const context = useContext(FormContext)
   if (context === undefined) {
     throw new Error('useForm needs to be used inside the FormProvider')
   }
