@@ -21,8 +21,8 @@ export const ZipCode: React.FC = () => {
         zipCode={zipCode}
         setZipCode={FormActions.setZipCode}
         dispatch={dispatch}
-        nextPage="/installation"
-        unavailable="/unavailable"
+        nextPage="installation"
+        unavailable="unavailable"
       />
     </Box>
   )

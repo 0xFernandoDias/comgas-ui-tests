@@ -1,6 +1,25 @@
-import React from 'react'
-import { Box } from '@chakra-ui/react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Box, Button } from '@chakra-ui/react'
+import { useForm } from '../../contexts/FormContext'
 
 export const Unavailable: React.FC = () => {
-  return <Box>Hello Unavailable</Box>
+  const navigate = useNavigate()
+  const { state } = useForm()
+  const { zipCode } = state
+
+  useEffect(() => {
+    zipCode === '' && navigate('zipCode')
+  }, [])
+
+  function goBack() {
+    navigate('/')
+  }
+
+  return (
+    <Box>
+      Unavailable
+      <Button onClick={goBack} />
+    </Box>
+  )
 }

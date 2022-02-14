@@ -21,7 +21,7 @@ export const Plan: React.FC<iPlan> = ({ plan, setPlan, dispatch }) => {
       type: setPlan,
       payload: plan,
     })
-    navigate('/planDetails')
+    navigate('planDetails')
   }
 
   // Lais SVG

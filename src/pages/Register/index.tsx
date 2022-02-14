@@ -21,7 +21,7 @@ export const Register: React.FC = () => {
         register={register}
         setRegister={FormActions.setRegister}
         dispatch={dispatch}
-        nextPage="/zipCode"
+        nextPage="zipCode"
       />
     </Box>
   )
