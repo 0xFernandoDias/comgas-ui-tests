@@ -1,18 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
+import { ZipCodeForm } from '../../components/ZipCodeForm'
 
 export const ZipCode: React.FC = () => {
+  const navigate = useNavigate()
+
   const { state, dispatch } = useForm()
-  const { zipCode } = state
-  // doesnt need const { setZipCode } = FormActions
+  const { register, zipCode } = state
+  const { name } = register
 
-  // formating
-  // validation /buscaCep
-  // if successful goes to ... and setZipCode else goes to unavailable
-  // if plan.name === '' goes back to / (think more about the possibilities)
-  // button link goes back to /
-  // see if its already something in input
+  useEffect(() => {
+    name === '' && navigate(-1)
+  }, [])
 
-  return <Box>Hello ZipCode</Box>
+  return (
+    <Box>
+      <ZipCodeForm
+        zipCode={zipCode}
+        setZipCode={FormActions.setZipCode}
+        dispatch={dispatch}
+        nextPage="/installation"
+        unavailable="/unavailable"
+      />
+    </Box>
+  )
 }

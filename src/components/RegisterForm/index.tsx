@@ -18,7 +18,7 @@ export const RegisterForm: React.FC<iRegisterForm> = ({
 }) => {
   const navigate = useNavigate()
 
-  const [register, setRegister] = useState<iRegister>({
+  const [register, setRegister] = useState({
     name: '',
     email: '',
     telephone: '',

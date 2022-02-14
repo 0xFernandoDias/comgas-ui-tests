@@ -12,9 +12,7 @@ export const Register: React.FC = () => {
   const { name } = plan
 
   useEffect(() => {
-    if (name === '') {
-      navigate('/')
-    }
+    name === '' && navigate('/')
   }, [])
 
   return (

@@ -8,11 +8,10 @@ export const PlanDetails: React.FC = () => {
 
   const { state } = useForm()
   const { plan } = state
+  const { name } = plan
 
   useEffect(() => {
-    if (plan.name === '') {
-      navigate(-1)
-    }
+    name === '' && navigate('/')
   }, [])
 
   function goForward() {
