@@ -5,8 +5,7 @@ import { Plan } from '../../components/Plan'
 
 export const Plans: React.FC = () => {
   const { state, dispatch } = useForm()
-  const plans = state.request.plans
-  // doesnt need const { setPlan } = FormActions
+  const { plans } = state.request
 
   return (
     <Box>

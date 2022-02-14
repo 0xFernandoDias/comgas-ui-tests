@@ -26,9 +26,7 @@ export const RegisterForm: React.FC<iRegisterForm> = ({
 
   useEffect(() => {
     const { name, email, telephone } = props.register
-
     const isEmpty = name === '' || email === '' || telephone === ''
-
     !isEmpty && setRegister(props.register)
   }, [])
 

@@ -11,10 +11,7 @@ export interface iPlan {
     name: string
     price: string
   }[]
-  installations: {
-    name: string
-    price: string
-  }[]
+  installations: iInstallation[]
 }
 
 export interface iRegister {
@@ -26,13 +23,11 @@ export interface iRegister {
 export interface iState {
   request: {
     plans: iPlan[]
-    dates: Date | null
   }
   plan: iPlan
   register: iRegister
   zipCode: string
-  installation: string
-  date: Date | null
+  installation: iInstallation
 }
 
 export interface iAction {
@@ -45,6 +40,11 @@ export type tDispatch = (action: iAction) => void
 export interface iContext {
   state: iState
   dispatch: tDispatch
+}
+
+export interface iInstallation {
+  name: string
+  price: string
 }
 
 export interface iFormProvider {

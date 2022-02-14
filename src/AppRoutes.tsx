@@ -10,9 +10,7 @@ import {
   Register,
   Installation,
   Checkout,
-  Schedule,
 } from './pages'
-import { Step } from './layouts'
 
 export const AppRoutes = () => {
   const { dispatch } = useForm()
@@ -22,7 +20,6 @@ export const AppRoutes = () => {
       type: FormActions.setRequest,
       payload: {
         plans: plansArray,
-        dates: null,
       },
     })
   }, [])
@@ -31,16 +28,16 @@ export const AppRoutes = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Plans />} />
-        <Step>
+        <>
           <Route path="planDetails" element={<PlanDetails />} />
           <Route path="register" element={<Register />} />
           <Route path="zipCode" element={<ZipCode />} />
           <Route path="unavailable" element={<Unavailable />} />
           <Route path="installation" element={<Installation />} />
-          <Route path="schedule" element={<Schedule />} />
           <Route path="checkout" element={<Checkout />} />
-        </Step>
-        {/*404 Not Found*/}
+
+          {/*404 Not Found*/}
+        </>
       </Routes>
     </BrowserRouter>
   )
