@@ -1,26 +1,23 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
 import { FormActions, useForm } from './contexts/FormContext'
+import { plansArray } from './utils/plansArray'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {
   Plans,
   PlanDetails,
   ZipCode,
   Unavailable,
-  Ambassador,
   Register,
-  PlanReview,
   Installation,
   Checkout,
   Schedule,
-  Contract,
-  NextSteps,
 } from './pages'
-import { plansArray } from './utils/plansArray'
+import { Step } from './layouts'
 
 export const AppRoutes = () => {
-  const { state, dispatch } = useForm()
+  const { dispatch } = useForm()
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch({
       type: FormActions.setRequest,
       payload: {
@@ -30,26 +27,19 @@ export const AppRoutes = () => {
     })
   }, [])
 
-  // console.log(state.request)
-
   return (
-    // Container as theme
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Plans />}>
-          <Route path=":planName" element={<PlanDetails />} />
-        </Route>
-        <Route path="zipCode" element={<ZipCode />}>
-          <Route path=":unavailable" element={<Unavailable />} />
-          <Route path=":ambassador" element={<Ambassador />} />
-        </Route>
-        <Route path="register" element={<Register />} />
-        <Route path="planReview" element={<PlanReview />} />
-        <Route path="installation" element={<Installation />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="schedule" element={<Schedule />} />
-        <Route path="contract" element={<Contract />} />
-        <Route path="nextSteps" element={<NextSteps />} />
+        <Route path="/" element={<Plans />} />
+        <Step>
+          <Route path="planDetails" element={<PlanDetails />} />
+          <Route path="register" element={<Register />} />
+          <Route path="zipCode" element={<ZipCode />} />
+          <Route path="unavailable" element={<Unavailable />} />
+          <Route path="installation" element={<Installation />} />
+          <Route path="schedule" element={<Schedule />} />
+          <Route path="checkout" element={<Checkout />} />
+        </Step>
       </Routes>
     </BrowserRouter>
   )

@@ -19,7 +19,6 @@ export const plansArray = [
         price: '5.90',
       },
     ],
-    technicalDetails: [''],
     installations: [
       { name: 'Tubulação embutida', price: '450.00' },
       { name: 'Tubulação aparente', price: '350.00' },
@@ -46,7 +45,6 @@ export const plansArray = [
         price: '5.90',
       },
     ],
-    technicalDetails: [''],
     installations: [
       { name: 'Tubulação embutida', price: '450.00' },
       { name: 'Tubulação aparente', price: '350.00' },
@@ -73,7 +71,6 @@ export const plansArray = [
         price: '5.90',
       },
     ],
-    technicalDetails: [''],
     installations: [
       { name: 'Tubulação embutida', price: '450.00' },
       { name: 'Tubulação aparente', price: '350.00' },
@@ -100,7 +97,6 @@ export const plansArray = [
         price: '5.90',
       },
     ],
-    technicalDetails: [''],
     installations: [
       { name: 'Tubulação embutida', price: '450.00' },
       { name: 'Tubulação aparente', price: '350.00' },

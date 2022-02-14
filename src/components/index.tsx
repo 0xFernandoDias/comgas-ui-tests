@@ -1,3 +1,5 @@
 export { Button } from './Button'
+export { Modal } from './Modal'
 export { Navbar } from './Navbar'
+export { Plan } from './Plan'
 export { Statusbar } from './Statusbar'
