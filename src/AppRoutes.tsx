@@ -40,6 +40,7 @@ export const AppRoutes = () => {
           <Route path="schedule" element={<Schedule />} />
           <Route path="checkout" element={<Checkout />} />
         </Step>
+        {/*404 Not Found*/}
       </Routes>
     </BrowserRouter>
   )

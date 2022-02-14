@@ -1,9 +1,5 @@
-import React, { ReactNode, createContext, useReducer, useContext } from 'react'
-import { iState, iContext, iAction } from './interfaces'
-
-interface iFormProvider {
-  children: ReactNode
-}
+import React, { createContext, useReducer, useContext } from 'react'
+import { iState, iContext, iAction, iFormProvider } from './interfaces'
 
 const initialData: iState = {
   request: {

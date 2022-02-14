@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { FormActions } from '.'
 
 export interface iPlan {
@@ -42,4 +43,8 @@ export type tDispatch = (action: iAction) => void
 export interface iContext {
   state: iState
   dispatch: tDispatch
+}
+
+export interface iFormProvider {
+  children: ReactNode
 }
