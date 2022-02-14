@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box } from '@chakra-ui/react'
+import { RegisterForm } from '../../components/RegisterForm'
 
 export const Register: React.FC = () => {
+  const navigate = useNavigate()
+
   const { state, dispatch } = useForm()
-  const { register } = state
-  // doesnt need const { setRegister } = FormActions
+  const { plan, register } = state
+  const { name } = plan
 
-  // formating
-  // validation
-  // if successful goes to ZipCode
-  // if status.plan.name === '' goes back to / (think more about the possibilities)
-  // button link goes back to /
-  // input shows the current state
+  useEffect(() => {
+    if (name === '') {
+      navigate('/')
+    }
+  }, [])
 
-  return <Box>Hello Register</Box>
+  return (
+    <Box>
+      <RegisterForm
+        register={register}
+        setRegister={FormActions.setRegister}
+        dispatch={dispatch}
+        nextPage="/zipCode"
+      />
+    </Box>
+  )
 }

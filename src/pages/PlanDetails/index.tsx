@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from '../../contexts/FormContext'
-import { Box } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 
 export const PlanDetails: React.FC = () => {
+  const navigate = useNavigate()
+
   const { state } = useForm()
   const { plan } = state
+
+  useEffect(() => {
+    if (plan.name === '') {
+      navigate(-1)
+    }
+  }, [])
+
+  function goForward() {
+    navigate('/register')
+  }
+  function goBack() {
+    navigate(-1)
+  }
 
   // name
   // description
@@ -13,7 +29,10 @@ export const PlanDetails: React.FC = () => {
   // price
   // complementary services
 
-  // button onClick goes to register
-
-  return <Box>Hello PlanDetails</Box>
+  return (
+    <Box>
+      <Button onClick={goBack} />
+      <Button onClick={goForward} />
+    </Box>
+  )
 }

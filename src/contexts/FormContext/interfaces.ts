@@ -17,17 +17,19 @@ export interface iPlan {
   }[]
 }
 
+export interface iRegister {
+  name: string
+  email: string
+  telephone: string
+}
+
 export interface iState {
   request: {
     plans: iPlan[]
     dates: Date | null
   }
   plan: iPlan
-  register: {
-    name: string
-    email: string
-    telephone: string
-  }
+  register: iRegister
   zipCode: string
   installation: string
   date: Date | null
