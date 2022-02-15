@@ -29,8 +29,29 @@ const textStyles = {
   title: {
     fontWeight: designTokens.fontWeight.bold,
     fontStyle: designTokens.fontStyle.normal,
+    fontSize: designTokens.fontSize.lg,
+    lineHeight: designTokens.lineHeight.lg,
+  },
+  subtitle: {
+    fontWeight: designTokens.fontWeight.regular,
+    fontStyle: designTokens.fontStyle.normal,
     fontSize: designTokens.fontSize.md,
     lineHeight: designTokens.lineHeight.md,
+    color: designTokens.colors.low.medium,
+  },
+  priceText: {
+    fontWeight: designTokens.fontWeight.regular,
+    fontStyle: designTokens.fontStyle.normal,
+    fontSize: designTokens.fontSize.sm,
+    lineHeight: designTokens.lineHeight.sm,
+    color: designTokens.colors.low.light,
+  },
+  text: {
+    fontWeight: designTokens.fontWeight.semiBold,
+    fontStyle: designTokens.fontStyle.normal,
+    fontSize: designTokens.fontSize.md,
+    lineHeight: designTokens.lineHeight.smd,
+    align: 'center',
   },
 }
 

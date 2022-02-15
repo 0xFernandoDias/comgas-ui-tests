@@ -23,14 +23,21 @@ export const designTokens = {
   },
   fontWeight: {
     bold: '700',
+    semiBold: '500',
+    regular: '400',
   },
   fontStyle: {
     normal: 'normal',
   },
   fontSize: {
-    md: '24px',
+    lg: '24px',
+    md: '16px',
+    sm: '14px',
   },
   lineHeight: {
-    md: '28.15',
+    lg: '28.15',
+    md: '18.77',
+    smd: '16',
+    sm: '15.96',
   },
 }
