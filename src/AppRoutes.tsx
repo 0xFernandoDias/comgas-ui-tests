@@ -12,6 +12,7 @@ import {
   Installation,
   Checkout,
 } from './pages'
+import { Step } from './layouts'
 
 export const AppRoutes = () => {
   const { state, dispatch } = useForm()
@@ -31,19 +32,21 @@ export const AppRoutes = () => {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Plans />} />
-        <>
-          <Route path="planDetails" element={<PlanDetails />} />
-          <Route path="register" element={<Register />} />
-          <Route path="zipCode" element={<ZipCode />}>
-            <Route path=":successful" element={<Successful />} />
-            <Route path=":unavailable" element={<Unavailable />} />
-          </Route>
-          <Route path="installation" element={<Installation />} />
-          <Route path="checkout" element={<Checkout sendData={sendData} />} />
-        </>
-      </Routes>
+      <Step>
+        <Routes>
+          <Route path="/" element={<Plans />} />
+          <>
+            <Route path="planDetails" element={<PlanDetails />} />
+            <Route path="register" element={<Register />} />
+            <Route path="zipCode" element={<ZipCode />}>
+              <Route path=":successful" element={<Successful />} />
+              <Route path=":unavailable" element={<Unavailable />} />
+            </Route>
+            <Route path="installation" element={<Installation />} />
+            <Route path="checkout" element={<Checkout sendData={sendData} />} />
+          </>
+        </Routes>
+      </Step>
     </BrowserRouter>
   )
 }
