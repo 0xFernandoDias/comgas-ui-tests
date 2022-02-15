@@ -4,7 +4,7 @@ import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { FormActions } from '../../contexts/FormContext'
 import { tDispatch } from '../../contexts/FormContext/interfaces'
 
-export interface iZipCodeForm {
+export interface iZipCode {
   zipCode: string
   setZipCode: FormActions.setZipCode
   dispatch: tDispatch
@@ -12,7 +12,7 @@ export interface iZipCodeForm {
   unavailable: string
 }
 
-export const ZipCodeForm: React.FC<iZipCodeForm> = ({
+export const ZipCode: React.FC<iZipCode> = ({
   dispatch,
   nextPage,
   unavailable,

@@ -4,14 +4,14 @@ import { FormActions } from '../../contexts/FormContext'
 import { useNavigate } from 'react-router-dom'
 import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 
-export interface iRegisterForm {
+export interface iRegisterProps {
   register: iRegister
   setRegister: FormActions.setRegister
   dispatch: tDispatch
   nextPage: string
 }
 
-export const RegisterForm: React.FC<iRegisterForm> = ({
+export const Register: React.FC<iRegisterProps> = ({
   dispatch,
   nextPage,
   ...props

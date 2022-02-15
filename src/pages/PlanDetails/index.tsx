@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from '../../contexts/FormContext'
 import { Box, Button } from '@chakra-ui/react'
+import { Plan } from '../../components/Plan'
 
 export const PlanDetails: React.FC = () => {
   const navigate = useNavigate()
@@ -30,6 +31,7 @@ export const PlanDetails: React.FC = () => {
 
   return (
     <Box>
+      <Plan />
       <Button onClick={goBack} />
       <Button onClick={goForward} />
     </Box>

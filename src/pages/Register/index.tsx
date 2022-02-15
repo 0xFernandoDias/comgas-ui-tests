@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
-import { Box } from '@chakra-ui/react'
-import { RegisterForm } from '../../components/RegisterForm'
+import { Register as RegisterForm } from '../../components/Register'
 
 export const Register: React.FC = () => {
   const navigate = useNavigate()
@@ -16,13 +15,11 @@ export const Register: React.FC = () => {
   }, [])
 
   return (
-    <Box>
-      <RegisterForm
-        register={register}
-        setRegister={FormActions.setRegister}
-        dispatch={dispatch}
-        nextPage="zipCode"
-      />
-    </Box>
+    <RegisterForm
+      register={register}
+      setRegister={FormActions.setRegister}
+      dispatch={dispatch}
+      nextPage="zipCode"
+    />
   )
 }

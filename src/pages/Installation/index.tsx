@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box } from '@chakra-ui/react'
-import { InstallationForm } from '../../components/InstallationForm'
+import { Installation as InstallationForm } from '../../components/Installation'
 
 export const Installation: React.FC = () => {
   const navigate = useNavigate()
@@ -16,14 +16,12 @@ export const Installation: React.FC = () => {
   }, [])
 
   return (
-    <Box>
-      <InstallationForm
-        installation={installation}
-        installations={installations}
-        setInstallation={FormActions.setInstallation}
-        dispatch={dispatch}
-        nextPage="checkout"
-      />
-    </Box>
+    <InstallationForm
+      installation={installation}
+      installations={installations}
+      setInstallation={FormActions.setInstallation}
+      dispatch={dispatch}
+      nextPage="checkout"
+    />
   )
 }

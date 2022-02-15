@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
-import { Box } from '@chakra-ui/react'
-import { ZipCodeForm } from '../../components/ZipCodeForm'
+import { ZipCode as ZipCodeForm } from '../../components/ZipCode'
 
 export const ZipCode: React.FC = () => {
   const navigate = useNavigate()
@@ -16,14 +15,12 @@ export const ZipCode: React.FC = () => {
   }, [])
 
   return (
-    <Box>
-      <ZipCodeForm
-        zipCode={zipCode}
-        setZipCode={FormActions.setZipCode}
-        dispatch={dispatch}
-        nextPage="successful"
-        unavailable="unavailable"
-      />
-    </Box>
+    <ZipCodeForm
+      zipCode={zipCode}
+      setZipCode={FormActions.setZipCode}
+      dispatch={dispatch}
+      nextPage="successful"
+      unavailable="unavailable"
+    />
   )
 }

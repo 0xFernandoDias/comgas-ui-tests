@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box } from '@chakra-ui/react'
-import { Plan } from '../../components/Plan'
+import { PlanCard } from '../../components/PlanCard'
 
 export const Plans: React.FC = () => {
   const { state, dispatch } = useForm()
@@ -11,7 +11,7 @@ export const Plans: React.FC = () => {
     <Box>
       {plans.map((plan, idx) => {
         return (
-          <Plan
+          <PlanCard
             key={idx}
             plan={plan}
             dispatch={dispatch}

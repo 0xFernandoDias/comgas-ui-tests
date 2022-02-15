@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { FormActions } from '../../contexts/FormContext'
 import { iInstallation, tDispatch } from '../../contexts/FormContext/interfaces'
 
-export interface iInstallationForm {
+export interface iInstallationProps {
   installation: iInstallation
   installations: iInstallation[]
   setInstallation: FormActions.setInstallation
@@ -13,7 +13,7 @@ export interface iInstallationForm {
   nextPage: string
 }
 
-export const InstallationForm: React.FC<iInstallationForm> = ({
+export const Installation: React.FC<iInstallationProps> = ({
   installations,
   dispatch,
   nextPage,
