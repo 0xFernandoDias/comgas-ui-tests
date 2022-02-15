@@ -5,13 +5,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import {
   Plans,
   PlanDetails,
-  ZipCode,
-  Unavailable,
   Register,
+  ZipCode,
+  Successful,
+  Unavailable,
   Installation,
   Checkout,
 } from './pages'
-import { Successful } from './pages/Successful'
 
 export const AppRoutes = () => {
   const { dispatch } = useForm()
@@ -42,7 +42,6 @@ export const AppRoutes = () => {
           </Route>
           <Route path="installation" element={<Installation />} />
           <Route path="checkout" element={<Checkout sendData={sendData} />} />
-          {/*404 Not Found*/}
         </>
       </Routes>
     </BrowserRouter>
