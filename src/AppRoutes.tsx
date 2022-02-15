@@ -24,6 +24,10 @@ export const AppRoutes = () => {
     })
   }, [])
 
+  function sendData() {
+    console.log()
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -34,7 +38,7 @@ export const AppRoutes = () => {
           <Route path="zipCode" element={<ZipCode />} />
           <Route path="unavailable" element={<Unavailable />} />
           <Route path="installation" element={<Installation />} />
-          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout" element={<Checkout sendData={sendData} />} />
           {/*404 Not Found*/}
         </>
       </Routes>

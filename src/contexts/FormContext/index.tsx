@@ -33,6 +33,8 @@ const initialData: iState = {
   installation: { name: '', price: '' },
 }
 
+const { plan, register, zipCode, installation } = initialData
+
 const FormContext = createContext<iContext | undefined>(undefined)
 
 export enum FormActions {
@@ -41,6 +43,7 @@ export enum FormActions {
   setRegister,
   setZipCode,
   setInstallation,
+  clearValues,
 }
 
 const formReducer = (state: iState, action: iAction) => {
@@ -55,6 +58,8 @@ const formReducer = (state: iState, action: iAction) => {
       return { ...state, zipCode: action.payload }
     case FormActions.setInstallation:
       return { ...state, installation: action.payload }
+    case FormActions.clearValues:
+      return { ...state, state: { plan, register, zipCode, installation } }
     default:
       return state
   }

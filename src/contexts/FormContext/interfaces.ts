@@ -32,7 +32,7 @@ export interface iState {
 
 export interface iAction {
   type: FormActions
-  payload: any
+  payload?: any
 }
 
 export type tDispatch = (action: iAction) => void
