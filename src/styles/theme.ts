@@ -51,7 +51,6 @@ const textStyles = {
     fontStyle: designTokens.fontStyle.normal,
     fontSize: designTokens.fontSize.md,
     lineHeight: designTokens.lineHeight.smd,
-    align: 'center',
   },
 }
 
