@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm, FormActions } from '../../contexts/FormContext'
-import { Box } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
 import { PlanCard } from '../../components/PlanCard'
 
 export const Plans: React.FC = () => {
@@ -9,6 +9,15 @@ export const Plans: React.FC = () => {
 
   return (
     <Box>
+      <Box>
+        <Image src="../../assets/images/pages/plans.png" alt="plans" />
+      </Box>
+      <Box textStyle="title" color="brand.primary.pure" pb="50px">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      </Box>
+      <Box textStyle="subtitle" pb="24px">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      </Box>
       {plans.map((plan, idx) => {
         return (
           <PlanCard

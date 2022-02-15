@@ -1,26 +1,25 @@
 import React from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, Center } from '@chakra-ui/react'
 
 export interface iButton {
   text: string
+  onClick: any
 }
 
-export const Button: React.FC<iButton> = ({ text }) => {
-  // text, color, size, onClick
+export const Button: React.FC<iButton> = ({ text, onClick }) => {
+  // color, size
 
   return (
     <Box
       h="48px"
+      w="100%"
       borderRadius="500px"
-      bg="#8FBB39"
+      bg="brand.secondary.pure"
       color="white"
-      maxW="150px"
       alignItems="center"
-      justifyContent="center"
+      onClick={onClick}
     >
-      <Box fontWeight={500} fontSize={16} lineHeight="100%">
-        {text}
-      </Box>
+      <Center>{text}</Center>
     </Box>
   )
 }

@@ -32,6 +32,12 @@ const textStyles = {
     fontSize: designTokens.fontSize.lg,
     lineHeight: designTokens.lineHeight.lg,
   },
+  smallTitle: {
+    fontWeight: designTokens.fontWeight.bold,
+    fontStyle: designTokens.fontStyle.normal,
+    fontSize: '20px',
+    lineHeight: designTokens.lineHeight.lg,
+  },
   subtitle: {
     fontWeight: designTokens.fontWeight.regular,
     fontStyle: designTokens.fontStyle.normal,

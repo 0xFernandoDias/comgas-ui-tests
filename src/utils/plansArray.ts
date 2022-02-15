@@ -1,6 +1,6 @@
 export const plansArray = [
   {
-    name: 'Fogão',
+    name: 'Fogao',
     details: [
       'Gás sem interrupção',
       'Menos tempo de cocção',
@@ -52,7 +52,7 @@ export const plansArray = [
     ],
   },
   {
-    name: 'Banho e torneira',
+    name: 'Torneira',
     details: [
       'Gás sem interrupção',
       'Menos tempo de cocção',
