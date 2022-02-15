@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom'
 import { InstallationForm } from '../../components/InstallationForm'
 
 export const Installation: React.FC = () => {

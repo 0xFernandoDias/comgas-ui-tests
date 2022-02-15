@@ -35,7 +35,6 @@ export const AppRoutes = () => {
           <Route path="unavailable" element={<Unavailable />} />
           <Route path="installation" element={<Installation />} />
           <Route path="checkout" element={<Checkout />} />
-
           {/*404 Not Found*/}
         </>
       </Routes>

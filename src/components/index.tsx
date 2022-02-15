@@ -1,5 +1,8 @@
 export { Button } from './Button'
+export { InstallationForm } from './InstallationForm'
 export { Modal } from './Modal'
 export { Navbar } from './Navbar'
 export { Plan } from './Plan'
+export { RegisterForm } from './RegisterForm'
 export { Statusbar } from './Statusbar'
+export { ZipCodeForm } from './ZipCodeForm'
