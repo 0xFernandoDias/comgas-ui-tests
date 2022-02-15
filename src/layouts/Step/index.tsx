@@ -22,8 +22,8 @@ export const Step: React.FC<iStep> = ({ children }) => {
     location === '/register'
       ? setStep(1)
       : location === '/zipCode' ||
-        location === '/zipCode/successful' ||
-        location === '/zipCode/unavailable'
+        location === '/successful' ||
+        location === '/unavailable'
       ? setStep(3)
       : location === '/installation'
       ? setStep(5)

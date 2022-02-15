@@ -1,9 +1,9 @@
-import { Box, Button } from '@chakra-ui/react'
-import styled from '@emotion/styled'
+import { Box, Center, HStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FormActions } from '../../contexts/FormContext'
 import { iInstallation, tDispatch } from '../../contexts/FormContext/interfaces'
+import { Button } from '../Button'
 
 export interface iInstallationProps {
   installation: iInstallation
@@ -48,6 +48,11 @@ export const Installation: React.FC<iInstallationProps> = ({
 
   return (
     <Box>
+      <Center>
+        <Box textStyle="title" color="brand.primary.pure">
+          Você quer que a Comgás cuide dessa instalação pra você?
+        </Box>
+      </Center>
       {installations.map((element, idx) => {
         const { name, price } = element
 
@@ -61,7 +66,7 @@ export const Installation: React.FC<iInstallationProps> = ({
           />
         )
       })}
-      <Button onClick={goBack}>Back</Button>
+      <Button text="Voltar" onClick={goBack} />
     </Box>
   )
 }
@@ -73,10 +78,6 @@ interface iOption {
   handleClick: any
 }
 
-const StyledOption = styled(Box)<{ selected: boolean }>`
-  border: 2px solid ${(props) => (props.selected ? '#25CD89' : '#16195C')};
-`
-
 export const Option: React.FC<iOption> = ({
   name,
   price,
@@ -84,9 +85,13 @@ export const Option: React.FC<iOption> = ({
   handleClick,
 }) => {
   return (
-    <StyledOption type="button" selected={selected} onClick={handleClick}>
-      {name}
-      {price}
-    </StyledOption>
+    <Box h="57px" borderColor="gray.100" onClick={handleClick}>
+      <HStack>
+        <Center>
+          {name}
+          {price} {selected && ' ✔️'}
+        </Center>
+      </HStack>
+    </Box>
   )
 }

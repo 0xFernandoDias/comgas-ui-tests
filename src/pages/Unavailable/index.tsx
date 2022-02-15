@@ -11,7 +11,7 @@ export const Unavailable: React.FC = () => {
   const { zipCode } = state
 
   useEffect(() => {
-    zipCode === '' && navigate('zipCode')
+    zipCode === '' && navigate('/zipCode')
   }, [])
 
   function goBack() {

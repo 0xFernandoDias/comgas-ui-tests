@@ -35,16 +35,13 @@ export const AppRoutes = () => {
       <Step>
         <Routes>
           <Route path="/" element={<Plans />} />
-          <>
-            <Route path="planDetails" element={<PlanDetails />} />
-            <Route path="register" element={<Register />} />
-            <Route path="zipCode" element={<ZipCode />}>
-              <Route path=":successful" element={<Successful />} />
-              <Route path=":unavailable" element={<Unavailable />} />
-            </Route>
-            <Route path="installation" element={<Installation />} />
-            <Route path="checkout" element={<Checkout sendData={sendData} />} />
-          </>
+          <Route path="planDetails" element={<PlanDetails />} />
+          <Route path="register" element={<Register />} />
+          <Route path="zipCode" element={<ZipCode />} />
+          <Route path="successful" element={<Successful />} />
+          <Route path="unavailable" element={<Unavailable />} />
+          <Route path="installation" element={<Installation />} />
+          <Route path="checkout" element={<Checkout sendData={sendData} />} />
         </Routes>
       </Step>
     </BrowserRouter>

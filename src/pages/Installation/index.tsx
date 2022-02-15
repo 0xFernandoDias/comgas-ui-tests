@@ -21,7 +21,7 @@ export const Installation: React.FC = () => {
       installations={installations}
       setInstallation={FormActions.setInstallation}
       dispatch={dispatch}
-      nextPage="checkout"
+      nextPage="/checkout"
     />
   )
 }

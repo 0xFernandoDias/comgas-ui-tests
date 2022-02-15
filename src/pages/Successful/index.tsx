@@ -11,11 +11,11 @@ export const Successful: React.FC = () => {
   const { zipCode } = state
 
   useEffect(() => {
-    zipCode === '' && navigate('zipCode')
+    zipCode === '' && navigate('/zipCode')
   }, [])
 
   function goForward() {
-    navigate('installation')
+    navigate('/installation')
   }
   function goBack() {
     navigate(-1)

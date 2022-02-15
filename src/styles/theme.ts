@@ -63,7 +63,7 @@ const textStyles = {
 const styles = {
   global: () => ({
     body: {
-      minHeight: '100%',
+      maxHeight: '100%',
       maxWidth: '570px',
       display: 'flex',
       top: '0',

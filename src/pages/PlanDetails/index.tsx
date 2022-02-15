@@ -15,7 +15,7 @@ export const PlanDetails: React.FC = () => {
   }, [])
 
   function goForward() {
-    navigate('register')
+    navigate('/register')
   }
   function goBack() {
     navigate(-1)
