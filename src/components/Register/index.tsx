@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { iRegister, tDispatch } from '../../contexts/FormContext/interfaces'
 import { FormActions } from '../../contexts/FormContext'
 import { useNavigate } from 'react-router-dom'
-import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
+import { Box, FormControl, FormLabel, Input, VStack } from '@chakra-ui/react'
+import { ImgText } from '../ImgText'
+import { Button } from '../Button'
 
 export interface iRegisterProps {
   register: iRegister
@@ -48,36 +50,49 @@ export const Register: React.FC<iRegisterProps> = ({
   }
 
   return (
-    <Box>
+    <VStack>
+      <ImgText img="register" text="Por favor, preencha os dados abaixo" />
       <FormControl>
-        <FormLabel htmlFor="name">Name</FormLabel>
-        <Input
-          id="name"
-          type="text"
-          value={name}
-          onChange={(e) => setRegister({ ...register, name: e.target.value })}
-        />
-
-        <FormLabel htmlFor="email">Email</FormLabel>
-        <Input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setRegister({ ...register, email: e.target.value })}
-        />
-
-        <FormLabel htmlFor="telephone">Telephone</FormLabel>
-        <Input
-          id="telephone"
-          type="tel"
-          value={telephone}
-          onChange={(e) =>
-            setRegister({ ...register, telephone: e.target.value })
-          }
-        />
+        <Box pb="30px">
+          <FormLabel htmlFor="name" textStyle="description">
+            Nome
+          </FormLabel>
+          <Input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setRegister({ ...register, name: e.target.value })}
+          />
+        </Box>
+        <Box pb="30px">
+          <FormLabel htmlFor="email" textStyle="description">
+            Email
+          </FormLabel>
+          <Input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) =>
+              setRegister({ ...register, email: e.target.value })
+            }
+          />
+        </Box>
+        <Box pb="30px">
+          <FormLabel htmlFor="telephone" textStyle="description">
+            Telefone
+          </FormLabel>
+          <Input
+            id="telephone"
+            type="tel"
+            value={telephone}
+            onChange={(e) =>
+              setRegister({ ...register, telephone: e.target.value })
+            }
+          />
+        </Box>
       </FormControl>
-      <Button onClick={goBack} />
-      <Button onClick={goForward} />
-    </Box>
+      <Button text="Próximo" onClick={goForward} />
+      <Button text="Voltar" onClick={goBack} />
+    </VStack>
   )
 }

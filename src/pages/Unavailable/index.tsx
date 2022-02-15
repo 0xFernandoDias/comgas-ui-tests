@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from '../../contexts/FormContext'
-import { Box, Button } from '@chakra-ui/react'
+import { VStack } from '@chakra-ui/react'
+import { ImgText } from '../../components/ImgText'
+import { Button } from '../../components'
 
 export const Unavailable: React.FC = () => {
   const navigate = useNavigate()
@@ -17,9 +19,12 @@ export const Unavailable: React.FC = () => {
   }
 
   return (
-    <Box>
-      Unavailable
-      <Button onClick={goBack} />
-    </Box>
+    <VStack>
+      <ImgText
+        img="unavailable"
+        text="Quer saber em primeira mão quando chegarmos ai? Junte 10 vizinhos na sua rua e ganhe desconto, além de acelerar nossa chegada no bairro!"
+      />
+      <Button text="Voltar" onClick={goBack} />
+    </VStack>
   )
 }
