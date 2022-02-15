@@ -1,25 +1,41 @@
 import { extendTheme } from '@chakra-ui/react'
+import { designTokens } from './designTokens'
 
 const fonts = {
-  body: 'Work Sans',
+  body: designTokens.fonts.primary,
 }
 
 const colors = {
   brand: {
-    1: '#474747',
-    2: '#2F6DB0',
-    3: '#8FBB39',
-    4: '#9C9C9C',
-    5: '#84BD00',
-    6: '#000000',
-    7: '#E0E0E0',
+    primary: {
+      pure: designTokens.colors.brand.primary,
+    },
+    secondary: {
+      pure: designTokens.colors.brand.secondary.pure,
+      medium: designTokens.colors.brand.secondary.medium,
+    },
+  },
+  low: {
+    pure: designTokens.colors.low.pure,
+    light: designTokens.colors.low.light,
+    medium: designTokens.colors.low.medium,
+  },
+  high: {
+    pure: designTokens.colors.high.pure,
   },
 }
 
-const textStyles = {}
+const textStyles = {
+  title: {
+    fontWeight: designTokens.fontWeight.bold,
+    fontStyle: designTokens.fontStyle.normal,
+    fontSize: designTokens.fontSize.md,
+    lineHeight: designTokens.lineHeight.md,
+  },
+}
 
 const styles = {
-  global: (props) => ({
+  global: () => ({
     body: {
       minHeight: '100%',
       maxWidth: '570px',
