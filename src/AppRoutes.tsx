@@ -11,6 +11,7 @@ import {
   Installation,
   Checkout,
 } from './pages'
+import { Successful } from './pages/Successful'
 
 export const AppRoutes = () => {
   const { dispatch } = useForm()
@@ -35,8 +36,10 @@ export const AppRoutes = () => {
         <>
           <Route path="planDetails" element={<PlanDetails />} />
           <Route path="register" element={<Register />} />
-          <Route path="zipCode" element={<ZipCode />} />
-          <Route path="unavailable" element={<Unavailable />} />
+          <Route path="zipCode" element={<ZipCode />}>
+            <Route path=":successful" element={<Successful />} />
+            <Route path=":unavailable" element={<Unavailable />} />
+          </Route>
           <Route path="installation" element={<Installation />} />
           <Route path="checkout" element={<Checkout sendData={sendData} />} />
           {/*404 Not Found*/}
