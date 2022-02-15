@@ -14,7 +14,7 @@ import {
 } from './pages'
 
 export const AppRoutes = () => {
-  const { dispatch } = useForm()
+  const { state, dispatch } = useForm()
 
   useEffect(() => {
     dispatch({
@@ -26,7 +26,7 @@ export const AppRoutes = () => {
   }, [])
 
   function sendData() {
-    console.log()
+    console.log(state)
   }
 
   return (
