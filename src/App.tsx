@@ -8,13 +8,13 @@ import { AppRoutes } from './AppRoutes'
 export const App = () => {
   return (
     <ChakraProvider theme={theme}>
-      <FormProvider>
-        <Page>
+      <Page>
+        <FormProvider>
           <Step>
             <AppRoutes />
           </Step>
-        </Page>
-      </FormProvider>
+        </FormProvider>
+      </Page>
     </ChakraProvider>
   )
 }
