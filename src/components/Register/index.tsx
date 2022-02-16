@@ -44,9 +44,9 @@ export const Register: React.FC<iRegisterProps> = ({
 
   const { name, email, telephone } = register
 
-  function goForward() {
-    const isEmpty = name === '' || email === '' || telephone === ''
+  const isEmpty = name === '' || email === '' || telephone === ''
 
+  function goForward() {
     !isEmpty &&
       dispatch({
         type: props.setRegister,
@@ -104,7 +104,7 @@ export const Register: React.FC<iRegisterProps> = ({
       <Button
         text="Próximo"
         disabled={initialRegisterState}
-        onClick={goForward}
+        onClick={!isEmpty && goForward}
       />
       <Button text="Voltar" onClick={goBack} />
     </VStack>

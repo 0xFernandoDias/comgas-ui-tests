@@ -2,7 +2,7 @@ import React from 'react'
 import { VStack, Box, Image } from '@chakra-ui/react'
 
 export interface iImgText {
-  img: 'plans' | 'register' | 'successful' | 'unavailable' | 'zipCode'
+  img: 'plans' | 'register' | 'successful' | 'unavailable' | 'zipcode'
   text: string
   description?: string
 }

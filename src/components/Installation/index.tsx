@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { iInstallation, tDispatch } from '../../contexts/FormContext/interfaces'
 import { FormActions } from '../../contexts/FormContext'
-import { Box, HStack } from '@chakra-ui/react'
-import { Button } from '../Button'
+import { Box, HStack, Button } from '@chakra-ui/react'
+import { Button as ButtonComponent } from '../Button'
 
 export interface iInstallationProps {
   installation: iInstallation
@@ -22,10 +22,7 @@ export const Installation: React.FC<iInstallationProps> = ({
   navigate,
   ...props
 }) => {
-  const [installation, setInstallation] = useState({
-    name: '',
-    price: '',
-  })
+  const [installation, setInstallation] = useState<iInstallation>({})
 
   useEffect(() => {
     const { name, price } = props.installation
@@ -33,12 +30,17 @@ export const Installation: React.FC<iInstallationProps> = ({
     !isEmpty && setInstallation(props.installation)
   }, [])
 
-  function goForward() {
+  function goForward(element: iInstallation) {
     dispatch({
       type: props.setInstallation,
       payload: installation,
     })
-    navigate(nextPage)
+    setInstallation(element)
+    installation !==
+      {
+        name: '',
+        price: '',
+      } && navigate(nextPage)
   }
 
   function goBack() {
@@ -46,7 +48,7 @@ export const Installation: React.FC<iInstallationProps> = ({
   }
 
   return (
-    <Box>
+    <Box pt="74px">
       <Box
         textStyle="title"
         color="brand.primary.pure"
@@ -62,63 +64,63 @@ export const Installation: React.FC<iInstallationProps> = ({
 
           return (
             <Option
-              element={element}
               selected={element === installation}
-              setInstallation={setInstallation}
               name={
                 name !== undefined ? name : 'Não quero instalação da Comgás'
               }
               price={price}
-              goForward={goForward}
+              element={element}
+              onClick={goForward}
               key={idx}
             />
           )
         })}
       </Box>
-      <Button text="Voltar" disabled={false} onClick={goBack} />
+      <ButtonComponent text="Voltar" disabled={false} onClick={goBack} />
     </Box>
   )
 }
 
 interface iOption {
-  element: iInstallation
   selected: boolean
-  setInstallation: any
   name: string
   price: string
-  goForward: any
+  element: iInstallation
+  onClick: any
 }
 
 export const Option: React.FC<iOption> = ({
-  element,
   selected,
-  setInstallation,
   name,
   price,
-  goForward,
+  element,
+  onClick,
 }) => {
+  function handleClick() {
+    onClick(element)
+  }
+
   return (
-    <Box
-      h="57px"
-      borderRadius="12px"
-      borderColor="#ECECEC"
-      borderWidth="2px"
-      onClick={() => {
-        setInstallation(element)
-        goForward()
-      }}
-      cursor="pointer"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <HStack>
-        <Box>{name}</Box>
-        <Box>
-          {name !== 'Não quero instalação da Comgás' ? '- R$' : ''} {price}
-          {selected && ' ✔️'}
-        </Box>
-      </HStack>
-    </Box>
+    <>
+      <Box
+        h="57px"
+        borderRadius="12px"
+        borderColor="#ECECEC"
+        borderWidth="2px"
+        cursor="pointer"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        onClick={handleClick}
+      >
+        <HStack>
+          <Box>{name}</Box>
+          <Box>
+            {name !== 'Não quero instalação da Comgás' ? '- R$' : ''} {price}
+            {selected && ' ✔️'}
+          </Box>
+        </HStack>
+      </Box>
+    </>
   )
 }

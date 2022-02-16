@@ -34,7 +34,7 @@ export const plansArray = [
     ],
     description: 'Ideal pra transformar as refeições em grandes memórias.',
     items: ['Ligação de 1 fogão', 'Seguro Extendido'],
-    price: '2099.40',
+    price: '1999.90',
     complementaryServices: [
       {
         name: 'Cleaning Service',
@@ -60,7 +60,7 @@ export const plansArray = [
     ],
     description: 'Ideal pra transformar as refeições em grandes memórias.',
     items: ['Ligação de 1 fogão', 'Seguro Extendido'],
-    price: '2099.40',
+    price: '899.50',
     complementaryServices: [
       {
         name: 'Cleaning Service',
@@ -86,7 +86,7 @@ export const plansArray = [
     ],
     description: 'Ideal pra transformar as refeições em grandes memórias.',
     items: ['Ligação de 1 fogão', 'Seguro Extendido'],
-    price: '2099.40',
+    price: '5000.70',
     complementaryServices: [
       {
         name: 'Cleaning Service',
