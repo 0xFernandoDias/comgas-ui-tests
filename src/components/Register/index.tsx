@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { iRegister, tDispatch } from '../../contexts/FormContext/interfaces'
 import { FormActions } from '../../contexts/FormContext'
-import { useNavigate } from 'react-router-dom'
 import { Box, FormControl, FormLabel, Input, VStack } from '@chakra-ui/react'
 import { ImgText } from '../ImgText'
 import { Button } from '../Button'
@@ -10,21 +9,32 @@ export interface iRegisterProps {
   register: iRegister
   setRegister: FormActions.setRegister
   dispatch: tDispatch
+  navigate: any
+  prevPage: string
   nextPage: string
 }
 
 export const Register: React.FC<iRegisterProps> = ({
   dispatch,
+  navigate,
+  prevPage,
   nextPage,
   ...props
 }) => {
-  const navigate = useNavigate()
-
-  const [register, setRegister] = useState({
+  const initialState = {
     name: '',
     email: '',
     telephone: '',
-  })
+  }
+
+  const [register, setRegister] = useState(initialState)
+  const [initialRegisterState, setInitialRegisterState] = useState(Boolean)
+
+  useEffect(() => {
+    register === initialState
+      ? setInitialRegisterState(true)
+      : setInitialRegisterState(false)
+  }, [register])
 
   useEffect(() => {
     const { name, email, telephone } = props.register
@@ -46,7 +56,7 @@ export const Register: React.FC<iRegisterProps> = ({
   }
 
   function goBack() {
-    navigate('/planDetails')
+    navigate(prevPage)
   }
 
   return (
@@ -91,7 +101,11 @@ export const Register: React.FC<iRegisterProps> = ({
           />
         </Box>
       </FormControl>
-      <Button text="Próximo" onClick={goForward} />
+      <Button
+        text="Próximo"
+        disabled={initialRegisterState}
+        onClick={goForward}
+      />
       <Button text="Voltar" onClick={goBack} />
     </VStack>
   )
