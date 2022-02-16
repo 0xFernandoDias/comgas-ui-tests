@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useForm } from '../../contexts/FormContext'
+import { FormActions, useForm } from '../../contexts/FormContext'
 import { VStack } from '@chakra-ui/react'
 import { ImgText } from '../../components/ImgText'
 import { Button } from '../../components'
 
 export const Unavailable: React.FC = () => {
   const navigate = useNavigate()
-  const { state } = useForm()
+  const { state, dispatch } = useForm()
   const { zipCode } = state
 
   useEffect(() => {

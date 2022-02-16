@@ -1,20 +1,19 @@
 import React from 'react'
-import { Box, Center } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 export interface iButton {
   text: string
   onClick: any
+  disabled: boolean
 }
 
-export const Button: React.FC<iButton> = ({ text, onClick }) => {
-  // color, size
-
+export const Button: React.FC<iButton> = ({ text, onClick, disabled }) => {
   return (
     <Box
       h="48px"
       w="100%"
       borderRadius="500px"
-      bg="brand.secondary.pure"
+      bg={!disabled ? 'brand.secondary.pure' : 'brand.secondary.disabled'}
       color="white"
       onClick={onClick}
       display="flex"

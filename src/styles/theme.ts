@@ -13,6 +13,7 @@ const colors = {
     secondary: {
       pure: designTokens.colors.brand.secondary.pure,
       medium: designTokens.colors.brand.secondary.medium,
+      disabled: designTokens.colors.brand.secondary.disabled,
     },
   },
   low: {

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Register as RegisterForm } from '../../components/Register'
+import { Statusbar } from '../../assets/svgs/Statusbar/index'
 
 export const Register: React.FC = () => {
   const navigate = useNavigate()
@@ -11,15 +12,17 @@ export const Register: React.FC = () => {
   const { name } = plan
 
   useEffect(() => {
-    name === '' && navigate(-1)
+    name === '' && navigate('/')
   }, [])
 
   return (
-    <RegisterForm
-      register={register}
-      setRegister={FormActions.setRegister}
-      dispatch={dispatch}
-      nextPage="/zipCode"
-    />
+    <Statusbar step="3">
+      <RegisterForm
+        register={register}
+        setRegister={FormActions.setRegister}
+        dispatch={dispatch}
+        nextPage="/zipCode"
+      />
+    </Statusbar>
   )
 }

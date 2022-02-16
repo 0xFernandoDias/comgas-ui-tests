@@ -2,7 +2,7 @@ import React from 'react'
 import { Icon } from '@chakra-ui/react'
 
 export interface iStatusbar {
-  step: number
+  step: string
 }
 
 const styles = {
@@ -17,7 +17,7 @@ const { s0, s1, s2, s3 } = styles
 export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
   return (
     <Icon viewBox="0 0">
-      {step === 1 ? (
+      {step === '1' ? (
         <>
           <path
             id="Layer"
@@ -45,7 +45,7 @@ export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
             d="m322 8.5c-1.9 0-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5c1.9 0 3.5 1.6 3.5 3.5c0 1.9-1.6 3.5-3.5 3.5z"
           />
         </>
-      ) : step === 2 ? (
+      ) : step === '2' ? (
         <>
           <path
             id="Layer"
@@ -73,7 +73,7 @@ export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
             d="m322 8.5c-1.9 0-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5c1.9 0 3.5 1.6 3.5 3.5c0 1.9-1.6 3.5-3.5 3.5z"
           />
         </>
-      ) : step === 3 ? (
+      ) : step === '3' ? (
         <>
           <path
             id="Layer"
@@ -101,7 +101,7 @@ export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
             d="m322 8.5c-1.9 0-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5c1.9 0 3.5 1.6 3.5 3.5c0 1.9-1.6 3.5-3.5 3.5z"
           />
         </>
-      ) : step === 4 ? (
+      ) : step === '4' ? (
         <>
           <path
             id="Layer"
@@ -129,7 +129,7 @@ export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
             d="m322 8.5c-1.9 0-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5c1.9 0 3.5 1.6 3.5 3.5c0 1.9-1.6 3.5-3.5 3.5z"
           />
         </>
-      ) : step === 5 ? (
+      ) : step === '5' ? (
         <>
           <path
             id="Layer"
@@ -157,7 +157,7 @@ export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
             d="m322 8.5c-1.9 0-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5c1.9 0 3.5 1.6 3.5 3.5c0 1.9-1.6 3.5-3.5 3.5z"
           />
         </>
-      ) : step === 6 ? (
+      ) : step === '6' ? (
         <>
           <path
             id="Layer"
@@ -185,7 +185,7 @@ export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
             d="m322 8.5c-1.9 0-3.5-1.6-3.5-3.5c0-1.9 1.6-3.5 3.5-3.5c1.9 0 3.5 1.6 3.5 3.5c0 1.9-1.6 3.5-3.5 3.5z"
           />
         </>
-      ) : step === 7 ? (
+      ) : step === '7' ? (
         <>
           <path
             id="Layer"

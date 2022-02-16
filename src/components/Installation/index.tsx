@@ -1,6 +1,5 @@
-import { Box, Center, HStack } from '@chakra-ui/react'
+import { Box, HStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { FormActions } from '../../contexts/FormContext'
 import { iInstallation, tDispatch } from '../../contexts/FormContext/interfaces'
 import { Button } from '../Button'
@@ -10,17 +9,19 @@ export interface iInstallationProps {
   installations: iInstallation[]
   setInstallation: FormActions.setInstallation
   dispatch: tDispatch
+  prevPage: string
   nextPage: string
+  navigate: any
 }
 
 export const Installation: React.FC<iInstallationProps> = ({
   installations,
   dispatch,
+  prevPage,
   nextPage,
+  navigate,
   ...props
 }) => {
-  const navigate = useNavigate()
-
   const [installation, setInstallation] = useState({
     name: '',
     price: '',
@@ -41,16 +42,21 @@ export const Installation: React.FC<iInstallationProps> = ({
   }
 
   function goBack() {
-    navigate('/zipCode')
+    navigate(prevPage)
   }
 
   return (
     <Box>
-      <Box textStyle="title" color="brand.primary.pure" pt="80px" pb="80px">
+      <Box
+        textStyle="title"
+        color="brand.primary.pure"
+        textAlign="center"
+        pb="24px"
+      >
         Você quer que a Comgás cuide dessa instalação pra você?
       </Box>
 
-      <Box pb="80px">
+      <Box pb="107px">
         {installations.map((element, idx) => {
           const { name, price } = element
 
@@ -69,7 +75,7 @@ export const Installation: React.FC<iInstallationProps> = ({
           )
         })}
       </Box>
-      <Button text="Voltar" onClick={goBack} />
+      <Button text="Voltar" disabled={false} onClick={goBack} />
     </Box>
   )
 }

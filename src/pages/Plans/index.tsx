@@ -2,34 +2,37 @@ import React from 'react'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box, HStack, Image } from '@chakra-ui/react'
 import { PlanCard } from '../../components/PlanCard'
+import { Page } from '../../layouts'
 
 export const Plans: React.FC = () => {
   const { state, dispatch } = useForm()
   const { plans } = state.request
 
   return (
-    <Box>
+    <Page>
       <Box>
-        <Image src="../../assets/images/pages/plans.png" alt="plans" />
+        <Box>
+          <Image src="../../assets/images/pages/plans.png" alt="plans" />
+        </Box>
+        <Box textStyle="title" color="brand.primary.pure" pb="50px">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        </Box>
+        <Box textStyle="subtitle" pb="24px">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        </Box>
+        <HStack>
+          {plans.map((plan, idx) => {
+            return (
+              <PlanCard
+                key={idx}
+                plan={plan}
+                dispatch={dispatch}
+                setPlan={FormActions.setPlan}
+              />
+            )
+          })}
+        </HStack>
       </Box>
-      <Box textStyle="title" color="brand.primary.pure" pb="50px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      </Box>
-      <Box textStyle="subtitle" pb="24px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-      </Box>
-      <HStack>
-        {plans.map((plan, idx) => {
-          return (
-            <PlanCard
-              key={idx}
-              plan={plan}
-              dispatch={dispatch}
-              setPlan={FormActions.setPlan}
-            />
-          )
-        })}
-      </HStack>
-    </Box>
+    </Page>
   )
 }

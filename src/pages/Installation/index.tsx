@@ -20,7 +20,9 @@ export const Installation: React.FC = () => {
       installations={installations}
       setInstallation={FormActions.setInstallation}
       dispatch={dispatch}
+      prevPage="/zipCode"
       nextPage="/checkout"
+      navigate={navigate}
     />
   )
 }

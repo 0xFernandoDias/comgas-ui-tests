@@ -10,6 +10,7 @@ export const designTokens = {
       secondary: {
         pure: '#8FBB39',
         medium: '#84BD00',
+        disabled: '#adbb8a',
       },
     },
     low: {
