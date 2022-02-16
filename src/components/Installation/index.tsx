@@ -48,23 +48,27 @@ export const Installation: React.FC<iInstallationProps> = ({
 
   return (
     <Box>
-      <Box textStyle="title" color="brand.primary.pure">
+      <Box textStyle="title" color="brand.primary.pure" pt="80px" pb="80px">
         Você quer que a Comgás cuide dessa instalação pra você?
       </Box>
 
-      {installations.map((element, idx) => {
-        const { name, price } = element
+      <Box pb="80px">
+        {installations.map((element, idx) => {
+          const { name, price } = element
 
-        return (
-          <Option
-            selected={element === installation}
-            handleClick={(event: iInstallation) => goForward(event)}
-            key={idx}
-            name={name}
-            price={price}
-          />
-        )
-      })}
+          return (
+            <Option
+              selected={element === installation}
+              handleClick={(event: iInstallation) => goForward(event)}
+              key={idx}
+              name={
+                name !== undefined ? name : 'Não quero instalação da Comgás'
+              }
+              price={price}
+            />
+          )
+        })}
+      </Box>
       <Button text="Voltar" onClick={goBack} />
     </Box>
   )
@@ -84,12 +88,22 @@ export const Option: React.FC<iOption> = ({
   handleClick,
 }) => {
   return (
-    <Box h="57px" borderColor="gray.100" onClick={handleClick}>
-      <HStack>
-        <Center>
-          {name}
-          {price} {selected && ' ✔️'}
-        </Center>
+    <Box
+      h="57px"
+      borderRadius="12px"
+      borderColor="#ECECEC"
+      borderWidth="2px"
+      onClick={handleClick}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <HStack cursor="pointer">
+        <Box>{name}</Box>
+        <Box>
+          {name !== 'Não quero instalação da Comgás' ? '- R$' : ''} {price}{' '}
+          {selected && ' ✔️'}
+        </Box>
       </HStack>
     </Box>
   )

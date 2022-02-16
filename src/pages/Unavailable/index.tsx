@@ -22,7 +22,8 @@ export const Unavailable: React.FC = () => {
     <VStack>
       <ImgText
         img="unavailable"
-        text="Quer saber em primeira mão quando chegarmos ai? Junte 10 vizinhos na sua rua e ganhe desconto, além de acelerar nossa chegada no bairro!"
+        text="Infelizmente ainda não chegamos na sua região."
+        description="Quer saber em primeira mão quando chegarmos ai? Junte 10 vizinhos na sua rua e ganhe desconto, além de acelerar nossa chegada no bairro!"
       />
       <Button text="Voltar" onClick={goBack} />
     </VStack>
