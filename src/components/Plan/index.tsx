@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, VStack, Image } from '@chakra-ui/react'
 import { iPlan } from '../../contexts/FormContext/interfaces'
+import { Box, VStack, Image } from '@chakra-ui/react'
 import { TitleSubtitle } from '../TitleSubtitle'
 import { List } from '../List'
 import { Price } from '../Price'
@@ -17,15 +17,13 @@ export const Plan: React.FC<iPlanProps> = ({ plan, goBack, goForward }) => {
 
   return (
     <VStack display="flex" alignItems="left">
-      <Box pb="28px">
+      <Box pb="7px">
         <Image src={`../../assets/images/plans/${name}.png`} />
       </Box>
-      <Box textStyle="priceText" pb="3px">
-        Pacote
-      </Box>
+      <Box textStyle="priceText">Pacote</Box>
       <TitleSubtitle title={name} subtitle={description} />
       <List items={details} />
-      <Box textStyle="priceText" pb="12px">
+      <Box textStyle="priceText" pb="24px">
         O que está incluso
       </Box>
       <List items={items} />

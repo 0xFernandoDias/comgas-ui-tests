@@ -12,10 +12,10 @@ export const TitleSubtitle: React.FC<iTitleSubtitle> = ({
 }) => {
   return (
     <VStack display="flex" alignItems="left">
-      <Box pb="4px" textStyle="smallTitle" color="brand.primary.pure">
+      <Box pb="4px" textStyle="title" color="brand.primary.pure">
         {title}
       </Box>
-      <Box pb="4px" textStyle="description">
+      <Box pb="16px" textStyle="description">
         {subtitle}
       </Box>
     </VStack>

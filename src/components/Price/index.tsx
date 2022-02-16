@@ -11,7 +11,7 @@ export const Price: React.FC<iPrice> = ({ price }) => {
       <Box textStyle="priceText">A partir de 6X de</Box>
       <HStack>
         <Box textStyle="priceText">R$</Box>
-        <Box textStyle="smallTitle" color="brand.primary.pure">
+        <Box textStyle="title" color="brand.primary.pure">
           {price}
         </Box>
       </HStack>
