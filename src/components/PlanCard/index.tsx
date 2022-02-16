@@ -1,44 +1,49 @@
 import React from 'react'
 import { iPlan, tDispatch } from '../../contexts/FormContext/interfaces'
 import { FormActions } from '../../contexts/FormContext'
-import { useNavigate } from 'react-router-dom'
-import { Box, Image, VStack } from '@chakra-ui/react'
+import { VStack, Box, Image } from '@chakra-ui/react'
+import { TitleSubtitle } from '../TitleSubtitle'
 import { Price } from '../Price'
 import { Button } from '../Button'
-import { TitleSubtitle } from '../TitleSubtitle'
 
 export interface iPlanCard {
   plan: iPlan
   setPlan: FormActions.setPlan
+  navigate: any
   dispatch: tDispatch
+  nextPage: string
 }
 
-export const PlanCard: React.FC<iPlanCard> = ({ plan, setPlan, dispatch }) => {
-  const navigate = useNavigate()
+export const PlanCard: React.FC<iPlanCard> = ({
+  plan,
+  setPlan,
+  navigate,
+  dispatch,
+  nextPage,
+}) => {
+  const { name, description, price } = plan
 
   function handleClick() {
     dispatch({
       type: setPlan,
       payload: plan,
     })
-    navigate('planDetails')
+    navigate(nextPage)
   }
-
-  const { name, description, price } = plan
 
   return (
     <VStack
       minW="248px"
       borderRadius="12px"
-      borderColor="#ECECEC"
       borderWidth="2px"
-      pr="17px"
+      borderColor="#ECECEC"
+      pr="16px"
       pb="50px"
     >
       <Box pb="6px">
         <Image src={`../../assets/images/plans/${name}.png`} />
       </Box>
-      <VStack alignItems="baseline" pl="14px">
+      <VStack alignItems="baseline" pl="24px">
         <TitleSubtitle title={name} subtitle={description} />
         <Price price={price} />
         <Button onClick={handleClick} text="Conheça e contrate" />

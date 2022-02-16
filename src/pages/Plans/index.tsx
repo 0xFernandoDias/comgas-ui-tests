@@ -3,8 +3,11 @@ import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box, HStack, Image } from '@chakra-ui/react'
 import { PlanCard } from '../../components/PlanCard'
 import { Page } from '../../layouts'
+import { useNavigate } from 'react-router-dom'
 
 export const Plans: React.FC = () => {
+  const navigate = useNavigate()
+
   const { state, dispatch } = useForm()
   const { plans } = state.request
 
@@ -26,8 +29,10 @@ export const Plans: React.FC = () => {
               <PlanCard
                 key={idx}
                 plan={plan}
-                dispatch={dispatch}
                 setPlan={FormActions.setPlan}
+                navigate={navigate}
+                dispatch={dispatch}
+                nextPage={plan.name}
               />
             )
           })}

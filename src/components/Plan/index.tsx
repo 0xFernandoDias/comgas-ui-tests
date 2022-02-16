@@ -6,7 +6,7 @@ import { List } from '../List'
 import { Price } from '../Price'
 import { Button } from '../Button'
 
-interface iPlanProps {
+export interface iPlanProps {
   plan: iPlan
   goBack: any
   goForward: any

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
-import { Plan, iPlan } from '.'
+import { Plan, iPlanProps } from '.'
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../../styles/theme'
 
@@ -11,7 +11,7 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story<iPlan> = (args) => (
+const Template: Story<iPlanProps> = (args) => (
   <ChakraProvider theme={theme}>
     <Plan {...args} />
   </ChakraProvider>
