@@ -21,6 +21,7 @@ export const Button: React.FC<iButton> = ({ text, onClick }) => {
       justifyContent="center"
       alignItems="center"
       cursor="pointer"
+      mb="20px"
     >
       {text}
     </Box>

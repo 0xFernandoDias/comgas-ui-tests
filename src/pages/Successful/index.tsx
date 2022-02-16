@@ -18,7 +18,7 @@ export const Successful: React.FC = () => {
     navigate('/installation')
   }
   function goBack() {
-    navigate(-1)
+    navigate('/zipCode')
   }
 
   return (

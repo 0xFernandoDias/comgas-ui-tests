@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
-import { Box } from '@chakra-ui/react'
 import { Installation as InstallationForm } from '../../components/Installation'
 
 export const Installation: React.FC = () => {
@@ -12,7 +11,7 @@ export const Installation: React.FC = () => {
   const { installations } = plan
 
   useEffect(() => {
-    zipCode === '' && navigate(-1)
+    zipCode === '' && navigate('/zipCode')
   }, [])
 
   return (

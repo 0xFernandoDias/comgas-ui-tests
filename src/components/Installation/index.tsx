@@ -32,9 +32,7 @@ export const Installation: React.FC<iInstallationProps> = ({
     !isEmpty && setInstallation(props.installation)
   }, [])
 
-  function goForward(e: iInstallation) {
-    setInstallation(e)
-
+  function goForward() {
     dispatch({
       type: props.setInstallation,
       payload: installation,
@@ -43,7 +41,7 @@ export const Installation: React.FC<iInstallationProps> = ({
   }
 
   function goBack() {
-    navigate(-1)
+    navigate('/zipCode')
   }
 
   return (
@@ -59,7 +57,9 @@ export const Installation: React.FC<iInstallationProps> = ({
           return (
             <Option
               selected={element === installation}
-              handleClick={(event: iInstallation) => goForward(event)}
+              setInstallation={setInstallation}
+              goForward={goForward}
+              element={element}
               key={idx}
               name={
                 name !== undefined ? name : 'Não quero instalação da Comgás'
@@ -78,14 +78,18 @@ interface iOption {
   name: string
   price: string
   selected: boolean
-  handleClick: any
+  setInstallation: any
+  goForward: any
+  element: iInstallation
 }
 
 export const Option: React.FC<iOption> = ({
   name,
   price,
   selected,
-  handleClick,
+  setInstallation,
+  element,
+  goForward,
 }) => {
   return (
     <Box
@@ -93,7 +97,10 @@ export const Option: React.FC<iOption> = ({
       borderRadius="12px"
       borderColor="#ECECEC"
       borderWidth="2px"
-      onClick={handleClick}
+      onClick={() => {
+        setInstallation(element)
+        goForward()
+      }}
       display="flex"
       alignItems="center"
       justifyContent="center"

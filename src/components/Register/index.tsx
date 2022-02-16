@@ -46,7 +46,7 @@ export const Register: React.FC<iRegisterProps> = ({
   }
 
   function goBack() {
-    navigate(-1)
+    navigate('/planDetails')
   }
 
   return (

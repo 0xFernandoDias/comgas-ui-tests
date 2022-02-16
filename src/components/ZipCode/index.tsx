@@ -38,7 +38,7 @@ export const ZipCode: React.FC<iZipCode> = ({
   }
 
   function goBack() {
-    navigate(-1)
+    navigate('/register')
   }
 
   // validation /buscaCep > unavailable
