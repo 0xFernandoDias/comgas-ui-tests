@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, HStack, VStack } from '@chakra-ui/react'
 
-interface iPrice {
+export interface iPrice {
   price: string
 }
 
