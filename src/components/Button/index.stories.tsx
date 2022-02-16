@@ -1,8 +1,8 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
 import { Button, iButton } from '.'
-import { theme } from '../../styles/theme'
 import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from '../../styles/theme'
 
 const meta: Meta = {
   title: 'Components/Button',

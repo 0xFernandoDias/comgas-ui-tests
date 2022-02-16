@@ -1,7 +1,7 @@
-import { Box, HStack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { FormActions } from '../../contexts/FormContext'
 import { iInstallation, tDispatch } from '../../contexts/FormContext/interfaces'
+import { FormActions } from '../../contexts/FormContext'
+import { Box, HStack } from '@chakra-ui/react'
 import { Button } from '../Button'
 
 export interface iInstallationProps {
@@ -62,15 +62,15 @@ export const Installation: React.FC<iInstallationProps> = ({
 
           return (
             <Option
+              element={element}
               selected={element === installation}
               setInstallation={setInstallation}
-              goForward={goForward}
-              element={element}
-              key={idx}
               name={
                 name !== undefined ? name : 'Não quero instalação da Comgás'
               }
               price={price}
+              goForward={goForward}
+              key={idx}
             />
           )
         })}
@@ -81,20 +81,20 @@ export const Installation: React.FC<iInstallationProps> = ({
 }
 
 interface iOption {
-  name: string
-  price: string
+  element: iInstallation
   selected: boolean
   setInstallation: any
+  name: string
+  price: string
   goForward: any
-  element: iInstallation
 }
 
 export const Option: React.FC<iOption> = ({
-  name,
-  price,
+  element,
   selected,
   setInstallation,
-  element,
+  name,
+  price,
   goForward,
 }) => {
   return (
@@ -107,14 +107,15 @@ export const Option: React.FC<iOption> = ({
         setInstallation(element)
         goForward()
       }}
+      cursor="pointer"
       display="flex"
       alignItems="center"
       justifyContent="center"
     >
-      <HStack cursor="pointer">
+      <HStack>
         <Box>{name}</Box>
         <Box>
-          {name !== 'Não quero instalação da Comgás' ? '- R$' : ''} {price}{' '}
+          {name !== 'Não quero instalação da Comgás' ? '- R$' : ''} {price}
           {selected && ' ✔️'}
         </Box>
       </HStack>

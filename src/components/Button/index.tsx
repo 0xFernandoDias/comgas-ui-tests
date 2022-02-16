@@ -3,11 +3,11 @@ import { Box } from '@chakra-ui/react'
 
 export interface iButton {
   text: string
-  onClick: any
   disabled: boolean
+  onClick: any
 }
 
-export const Button: React.FC<iButton> = ({ text, onClick, disabled }) => {
+export const Button: React.FC<iButton> = ({ text, disabled, onClick }) => {
   return (
     <Box
       h="48px"

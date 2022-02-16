@@ -1,6 +1,5 @@
-import { Box, VStack } from '@chakra-ui/react'
 import React from 'react'
-import { iInstallation, iRegister } from '../../contexts/FormContext/interfaces'
+import { Box, VStack } from '@chakra-ui/react'
 
 export interface iList {
   items: string[]
