@@ -54,7 +54,7 @@ export const Register: React.FC<iRegisterProps> = ({
       <ImgText img="register" text="Por favor, preencha os dados abaixo" />
       <FormControl>
         <Box pb="30px">
-          <FormLabel htmlFor="name" textStyle="description">
+          <FormLabel htmlFor="name" textStyle="description" pb="12px">
             Nome
           </FormLabel>
           <Input
@@ -65,8 +65,8 @@ export const Register: React.FC<iRegisterProps> = ({
           />
         </Box>
         <Box pb="30px">
-          <FormLabel htmlFor="email" textStyle="description">
-            Email
+          <FormLabel htmlFor="email" textStyle="description" pb="12px">
+            E-mail
           </FormLabel>
           <Input
             id="email"
@@ -78,7 +78,7 @@ export const Register: React.FC<iRegisterProps> = ({
           />
         </Box>
         <Box pb="30px">
-          <FormLabel htmlFor="telephone" textStyle="description">
+          <FormLabel htmlFor="telephone" textStyle="description" pb="12px">
             Telefone
           </FormLabel>
           <Input

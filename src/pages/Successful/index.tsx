@@ -25,7 +25,8 @@ export const Successful: React.FC = () => {
     <VStack>
       <ImgText
         img="successful"
-        text="Você sabia que 80% dos seus vizinhos já são clientes Comgas?"
+        text="A Comgas já está na sua região!"
+        description="Você sabia que 80% dos seus vizinhos já são clientes Comgas?"
       />
       <Button text="Continuar" onClick={goForward} />
       <Button text="Voltar" onClick={goBack} />

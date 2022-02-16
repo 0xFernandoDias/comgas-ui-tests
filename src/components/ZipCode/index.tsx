@@ -46,7 +46,7 @@ export const ZipCode: React.FC<iZipCode> = ({
   return (
     <VStack>
       <ImgText img="zipcode" text="Em qual endereço você quer instalar gás?" />
-      <FormControl pt="30px">
+      <FormControl pt="30px" pb="80px">
         <FormLabel htmlFor="zipCode" textStyle="description">
           Insira o CEP
         </FormLabel>

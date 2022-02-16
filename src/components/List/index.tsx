@@ -7,7 +7,7 @@ export interface iList {
 
 export const List: React.FC<iList> = ({ items }) => {
   return (
-    <VStack pb="24px">
+    <VStack pb="24px" display="flex" alignItems="left">
       {items.map((item, idx) => {
         return (
           <ul key={idx}>

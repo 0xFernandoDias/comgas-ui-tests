@@ -16,15 +16,18 @@ export const Plan: React.FC<iPlanProps> = ({ plan, goBack, goForward }) => {
   const { name, description, details, items, price } = plan
 
   return (
-    <VStack>
+    <VStack display="flex" alignItems="left">
       <Box pb="28px">
         <Image src={`../../assets/images/plans/${name}.png`} />
       </Box>
-      <Box textStyle="price" pb="3px">
+      <Box textStyle="priceText" pb="3px">
         Pacote
       </Box>
       <TitleSubtitle title={name} subtitle={description} />
       <List items={details} />
+      <Box textStyle="priceText" pb="12px">
+        O que está incluso
+      </Box>
       <List items={items} />
       <Price price={price} />
       <Button text="Contratar esse pacote" onClick={goForward} />

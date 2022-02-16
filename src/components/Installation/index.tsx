@@ -48,11 +48,10 @@ export const Installation: React.FC<iInstallationProps> = ({
 
   return (
     <Box>
-      <Center>
-        <Box textStyle="title" color="brand.primary.pure">
-          Você quer que a Comgás cuide dessa instalação pra você?
-        </Box>
-      </Center>
+      <Box textStyle="title" color="brand.primary.pure">
+        Você quer que a Comgás cuide dessa instalação pra você?
+      </Box>
+
       {installations.map((element, idx) => {
         const { name, price } = element
 

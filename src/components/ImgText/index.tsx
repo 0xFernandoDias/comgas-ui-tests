@@ -9,26 +9,18 @@ export interface iImgText {
 
 export const ImgText: React.FC<iImgText> = ({ img, text, description }) => {
   return (
-    <VStack pb="32px">
-      <Center>
-        <Center>
-          <Box pb="15px">
-            <Center>
-              <Image src={`../../assets/images/pages/${img}.png`} />
-            </Center>
-          </Box>
-        </Center>
-        <Center>
-          <Box textStyle="title" color="brand.primary.pure">
-            {text}
-          </Box>
-        </Center>
-        {description && (
-          <Box pt="50px" textStyle="description">
-            {description}
-          </Box>
-        )}
-      </Center>
+    <VStack pb="52px">
+      <Box pb="15px">
+        <Image src={`../../assets/images/pages/${img}.png`} />
+      </Box>
+      <Box textStyle="title" color="brand.primary.pure">
+        {text}
+      </Box>
+      {description && (
+        <Box pt="50px" textStyle="description">
+          {description}
+        </Box>
+      )}
     </VStack>
   )
 }
