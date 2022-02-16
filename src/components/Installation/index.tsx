@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { iInstallation, tDispatch } from '../../contexts/FormContext/interfaces'
 import { FormActions } from '../../contexts/FormContext'
-import { Box, HStack, Button } from '@chakra-ui/react'
+import { Box, HStack } from '@chakra-ui/react'
 import { Button as ButtonComponent } from '../Button'
 
 export interface iInstallationProps {
@@ -22,7 +22,7 @@ export const Installation: React.FC<iInstallationProps> = ({
   navigate,
   ...props
 }) => {
-  const [installation, setInstallation] = useState<iInstallation>({})
+  const [installation, setInstallation] = useState({})
 
   useEffect(() => {
     const { name, price } = props.installation
