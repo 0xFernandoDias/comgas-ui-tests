@@ -35,9 +35,9 @@ export const designTokens = {
     sm: '14px',
   },
   lineHeight: {
-    lg: '28.15',
-    md: '18.77',
-    smd: '16',
-    sm: '15.96',
+    lg: '28.15px',
+    md: '18.77px',
+    smd: '16px',
+    sm: '15.96px',
   },
 }
