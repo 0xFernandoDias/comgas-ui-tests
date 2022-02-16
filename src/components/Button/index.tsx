@@ -16,10 +16,13 @@ export const Button: React.FC<iButton> = ({ text, onClick }) => {
       borderRadius="500px"
       bg="brand.secondary.pure"
       color="white"
-      alignItems="center"
       onClick={onClick}
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      cursor="pointer"
     >
-      <Center>{text}</Center>
+      {text}
     </Box>
   )
 }

@@ -8,7 +8,7 @@ const fonts = {
 const colors = {
   brand: {
     primary: {
-      pure: designTokens.colors.brand.primary,
+      pure: designTokens.colors.brand.primary.pure,
     },
     secondary: {
       pure: designTokens.colors.brand.secondary.pure,
@@ -64,11 +64,9 @@ const styles = {
   global: () => ({
     body: {
       maxHeight: '100%',
-      maxWidth: '570px',
+      maxWidth: '375px',
       display: 'flex',
-      top: '0',
-      left: '0',
-      margin: '0',
+      margin: 'auto 24px auto',
       padding: '0',
       fontFamily: 'Work Sans',
       boxSizing: 'border-box',

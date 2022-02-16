@@ -30,7 +30,7 @@ export const Step: React.FC<iStep> = ({ children }) => {
       : location === '/checkout'
       ? setStep(7)
       : location
-  }, [location])
+  }, [])
 
   return (
     <Box>

@@ -8,9 +8,9 @@ interface iPrice {
 export const Price: React.FC<iPrice> = ({ price }) => {
   return (
     <VStack pb="30px">
-      <Box textStyle="price">A partir de 6X de</Box>
+      <Box textStyle="priceText">A partir de 6X de</Box>
       <HStack>
-        <Box textStyle="price">R$</Box>
+        <Box textStyle="priceText">R$</Box>
         <Box textStyle="smallTitle" color="brand.primary.pure">
           {price}
         </Box>

@@ -22,9 +22,9 @@ export const designTokens = {
     },
   },
   fontWeight: {
-    bold: '700',
-    semiBold: '500',
-    regular: '400',
+    bold: 700,
+    semiBold: 500,
+    regular: 400,
   },
   fontStyle: {
     normal: 'normal',

@@ -16,7 +16,7 @@ const { s0, s1, s2, s3 } = styles
 
 export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
   return (
-    <Icon viewBox="0 0">
+    <Icon viewBox="0 0 328 10" width="328" height="10">
       {step === 1 ? (
         <>
           <path

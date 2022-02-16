@@ -8,7 +8,7 @@ export interface iStatusbar {
 
 export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
   return (
-    <VStack pb={step !== undefined ? '32px' : '0'}>
+    <VStack>
       <StatusbarSvg step={step} />
       {step === 1 ||
         (step === 3 && (

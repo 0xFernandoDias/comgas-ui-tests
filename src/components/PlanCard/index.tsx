@@ -27,13 +27,22 @@ export const PlanCard: React.FC<iPlanCard> = ({ plan, setPlan, dispatch }) => {
   const { name, description, price } = plan
 
   return (
-    <VStack maxW="248px" maxH="386px" borderRadius="12px" pr="17px">
+    <VStack
+      minW="248px"
+      borderRadius="12px"
+      borderColor="#ECECEC"
+      borderWidth="2px"
+      pr="17px"
+      pb="50px"
+    >
       <Box pb="6px">
         <Image src={`../../assets/images/plans/${name}.png`} />
       </Box>
-      <TitleSubtitle title={name} subtitle={description} />
-      <Price price={price} />
-      <Button onClick={handleClick} text="Conheça e contrate" />
+      <VStack alignItems="baseline" pl="14px">
+        <TitleSubtitle title={name} subtitle={description} />
+        <Price price={price} />
+        <Button onClick={handleClick} text="Conheça e contrate" />
+      </VStack>
     </VStack>
   )
 }
