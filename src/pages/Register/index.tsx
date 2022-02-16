@@ -14,7 +14,7 @@ export const Register: React.FC = () => {
     name === '' && navigate('/')
   }, [])
 
-  return (
+  return name !== '' ? (
     <RegisterForm
       register={register}
       setRegister={FormActions.setRegister}
@@ -23,5 +23,7 @@ export const Register: React.FC = () => {
       prevPage="/planDetails"
       nextPage="/zipCode"
     />
+  ) : (
+    <></>
   )
 }

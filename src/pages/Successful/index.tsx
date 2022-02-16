@@ -21,7 +21,7 @@ export const Successful: React.FC = () => {
     navigate('/zipCode')
   }
 
-  return (
+  return zipCode !== '' ? (
     <VStack>
       <ImgText
         img="successful"
@@ -31,5 +31,7 @@ export const Successful: React.FC = () => {
       <Button text="Continuar" onClick={goForward} />
       <Button text="Voltar" onClick={goBack} />
     </VStack>
+  ) : (
+    <></>
   )
 }

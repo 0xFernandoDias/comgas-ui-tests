@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FormActions, useForm } from '../../contexts/FormContext'
+import { useForm } from '../../contexts/FormContext'
 import { VStack } from '@chakra-ui/react'
 import { ImgText } from '../../components/ImgText'
 import { Button } from '../../components'
 
 export const Unavailable: React.FC = () => {
   const navigate = useNavigate()
-  const { state, dispatch } = useForm()
+  const { state } = useForm()
   const { zipCode } = state
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const Unavailable: React.FC = () => {
     navigate('/')
   }
 
-  return (
+  return zipCode !== '' ? (
     <VStack>
       <ImgText
         img="unavailable"
@@ -27,5 +27,7 @@ export const Unavailable: React.FC = () => {
       />
       <Button text="Voltar" onClick={goBack} />
     </VStack>
+  ) : (
+    <></>
   )
 }

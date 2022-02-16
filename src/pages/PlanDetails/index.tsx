@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from '../../contexts/FormContext'
 import { Plan } from '../../components/Plan'
-import { Page } from '../../layouts'
 
 export const PlanDetails: React.FC = () => {
   const navigate = useNavigate()
@@ -22,9 +21,9 @@ export const PlanDetails: React.FC = () => {
     navigate('/')
   }
 
-  return (
-    <Page>
-      <Plan plan={plan} goBack={goBack} goForward={goForward} />
-    </Page>
+  return name !== '' ? (
+    <Plan plan={plan} goBack={goBack} goForward={goForward} />
+  ) : (
+    <></>
   )
 }

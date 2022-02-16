@@ -63,7 +63,7 @@ export const Register: React.FC<iRegisterProps> = ({
     <VStack>
       <ImgText img="register" text="Por favor, preencha os dados abaixo" />
       <FormControl>
-        <Box pb="30px">
+        <Box pb="24px">
           <FormLabel htmlFor="name" textStyle="description" pb="12px">
             Nome
           </FormLabel>
@@ -74,7 +74,7 @@ export const Register: React.FC<iRegisterProps> = ({
             onChange={(e) => setRegister({ ...register, name: e.target.value })}
           />
         </Box>
-        <Box pb="30px">
+        <Box pb="24px">
           <FormLabel htmlFor="email" textStyle="description" pb="12px">
             E-mail
           </FormLabel>
@@ -87,7 +87,7 @@ export const Register: React.FC<iRegisterProps> = ({
             }
           />
         </Box>
-        <Box pb="30px">
+        <Box pb="24px">
           <FormLabel htmlFor="telephone" textStyle="description" pb="12px">
             Telefone
           </FormLabel>

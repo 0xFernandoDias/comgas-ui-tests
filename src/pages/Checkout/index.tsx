@@ -29,8 +29,7 @@ export const Checkout: React.FC<iCheckout> = ({ sendData }) => {
   useEffect(() => {
     name === '' && navigate('/installation')
   }, [])
-
-  return (
+  return name !== '' ? (
     <Box>
       <Box textStyle="title" color="brand.primary.pure" pt="40pt" pb="26px">
         Revise seus pacotes
@@ -84,5 +83,7 @@ export const Checkout: React.FC<iCheckout> = ({ sendData }) => {
         />
       )}
     </Box>
+  ) : (
+    <></>
   )
 }

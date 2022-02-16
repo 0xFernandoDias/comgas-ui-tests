@@ -32,7 +32,7 @@ export const Plans: React.FC = () => {
                 setPlan={FormActions.setPlan}
                 navigate={navigate}
                 dispatch={dispatch}
-                nextPage={plan.name}
+                nextPage="/planDetails"
               />
             )
           })}

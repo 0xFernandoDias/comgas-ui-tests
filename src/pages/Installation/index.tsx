@@ -14,7 +14,7 @@ export const Installation: React.FC = () => {
     zipCode === '' && navigate('/zipCode')
   }, [])
 
-  return (
+  return zipCode !== '' ? (
     <InstallationForm
       installation={installation}
       installations={installations}
@@ -24,5 +24,7 @@ export const Installation: React.FC = () => {
       nextPage="/checkout"
       navigate={navigate}
     />
+  ) : (
+    <></>
   )
 }
