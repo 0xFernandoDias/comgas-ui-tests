@@ -4,6 +4,7 @@ import { useForm } from '../../contexts/FormContext'
 import { VStack } from '@chakra-ui/react'
 import { ImgText } from '../../components/ImgText'
 import { Button } from '../../components'
+import { Page } from '../../layouts'
 
 export const Unavailable: React.FC = () => {
   const navigate = useNavigate()
@@ -19,14 +20,16 @@ export const Unavailable: React.FC = () => {
   }
 
   return zipCode !== '' ? (
-    <VStack>
-      <ImgText
-        img="unavailable"
-        text="Infelizmente ainda não chegamos na sua região."
-        description="Quer saber em primeira mão quando chegarmos ai? Junte 10 vizinhos na sua rua e ganhe desconto, além de acelerar nossa chegada no bairro!"
-      />
-      <Button text="Voltar" onClick={goBack} />
-    </VStack>
+    <Page step="2">
+      <VStack>
+        <ImgText
+          img="unavailable"
+          text="Infelizmente ainda não chegamos na sua região."
+          description="Quer saber em primeira mão quando chegarmos ai? Junte 10 vizinhos na sua rua e ganhe desconto, além de acelerar nossa chegada no bairro!"
+        />
+        <Button text="Voltar" onClick={goBack} />
+      </VStack>
+    </Page>
   ) : (
     <></>
   )

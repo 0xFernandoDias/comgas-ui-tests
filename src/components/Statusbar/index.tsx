@@ -1,27 +1,18 @@
 import React from 'react'
-import { Box, VStack, Center } from '@chakra-ui/react'
-import { Statusbar as StatusbarSvg } from '../../assets/svgs/Statusbar'
+import { Box, VStack } from '@chakra-ui/react'
+import { Step1, Step2, Step3, Step4 } from '../../assets/svgs/Statusbar'
 
 export interface iStatusbar {
-  step: string
+  step?: string
 }
 
 export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
   return (
-    <VStack zIndex="999">
-      <StatusbarSvg step={step} />
-      {step === '1' ||
-        (step === '3' && (
-          <Center>
-            <Box textStyle="priceText">Dados Pessoais</Box>
-          </Center>
-        ))}
-      {step === '6' ||
-        (step === '7' && (
-          <Box textStyle="priceText" right="0">
-            Contratar
-          </Box>
-        ))}
+    <VStack>
+      {step === '1' && <Step1 />}
+      {step === '2' && <Step2 />}
+      {step === '3' && <Step3 />}
+      {step === '4' && <Step4 />}
     </VStack>
   )
 }

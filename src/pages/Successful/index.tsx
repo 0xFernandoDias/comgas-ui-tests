@@ -4,6 +4,7 @@ import { useForm } from '../../contexts/FormContext'
 import { VStack } from '@chakra-ui/react'
 import { ImgText } from '../../components/ImgText'
 import { Button } from '../../components'
+import { Page } from '../../layouts'
 
 export const Successful: React.FC = () => {
   const navigate = useNavigate()
@@ -22,15 +23,17 @@ export const Successful: React.FC = () => {
   }
 
   return zipCode !== '' ? (
-    <VStack>
-      <ImgText
-        img="successful"
-        text="A Comgas já está na sua região!"
-        description="Você sabia que 80% dos seus vizinhos já são clientes Comgas?"
-      />
-      <Button text="Continuar" onClick={zipCode !== '' && goForward} />
-      <Button text="Voltar" onClick={goBack} />
-    </VStack>
+    <Page step="2">
+      <VStack>
+        <ImgText
+          img="successful"
+          text="A Comgas já está na sua região!"
+          description="Você sabia que 80% dos seus vizinhos já são clientes Comgas?"
+        />
+        <Button text="Continuar" onClick={zipCode !== '' && goForward} />
+        <Button text="Voltar" onClick={goBack} />
+      </VStack>
+    </Page>
   ) : (
     <></>
   )

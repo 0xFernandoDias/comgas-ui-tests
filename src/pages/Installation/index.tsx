@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Installation as InstallationForm } from '../../components/Installation'
+import { Page } from '../../layouts'
 
 export const Installation: React.FC = () => {
   const navigate = useNavigate()
@@ -15,15 +16,17 @@ export const Installation: React.FC = () => {
   }, [])
 
   return zipCode !== '' ? (
-    <InstallationForm
-      installation={installation}
-      installations={installations}
-      setInstallation={FormActions.setInstallation}
-      dispatch={dispatch}
-      prevPage="/zipCode"
-      nextPage="/checkout"
-      navigate={navigate}
-    />
+    <Page step="3">
+      <InstallationForm
+        installation={installation}
+        installations={installations}
+        setInstallation={FormActions.setInstallation}
+        dispatch={dispatch}
+        prevPage="/zipCode"
+        nextPage="/checkout"
+        navigate={navigate}
+      />
+    </Page>
   ) : (
     <></>
   )

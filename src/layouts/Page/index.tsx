@@ -4,12 +4,13 @@ import { Navbar } from '../../components/Navbar'
 
 export interface iPage {
   children: React.ReactNode
+  step?: string
 }
 
-export const Page: React.FC<iPage> = ({ children }) => {
+export const Page: React.FC<iPage> = ({ children, step }) => {
   return (
     <Box>
-      <Navbar />
+      <Navbar step={step} />
       {children}
     </Box>
   )
