@@ -64,10 +64,11 @@ const textStyles = {
 const styles = {
   global: () => ({
     body: {
-      maxHeight: '100%',
-      maxWidth: '375px',
+      maxHeight: '80%',
+      maxWidth: '50%',
       display: 'flex',
-      margin: 'auto 24px auto',
+      justifyContent: 'center',
+      margin: 'auto auto auto auto',
       padding: '0',
       fontFamily: 'Work Sans',
       boxSizing: 'border-box',

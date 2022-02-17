@@ -31,16 +31,17 @@ export const Installation: React.FC<iInstallationProps> = ({
   }, [])
 
   function goForward(element: iInstallation) {
+    const initialState = {
+      name: '',
+      price: '',
+    }
+
     dispatch({
       type: props.setInstallation,
       payload: installation,
     })
     setInstallation(element)
-    installation !==
-      {
-        name: '',
-        price: '',
-      } && navigate(nextPage)
+    installation !== initialState && navigate(nextPage)
   }
 
   function goBack() {
