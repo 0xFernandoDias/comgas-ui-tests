@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box, HStack, Image } from '@chakra-ui/react'
 import { PlanCard } from '../../components/PlanCard'
@@ -10,6 +10,8 @@ export const Plans: React.FC = () => {
 
   const { state, dispatch } = useForm()
   const { plans } = state.request
+
+  console.log(state)
 
   return (
     <Page>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Meta, Story } from '@storybook/react'
-import { Navbar } from '.'
+import { Navbar, iNavbar } from '.'
+import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from '../../styles/theme'
 
 const meta: Meta = {
   title: 'Components/Navbar',
@@ -9,6 +11,14 @@ const meta: Meta = {
 
 export default meta
 
-const Template: Story = (args) => <Navbar {...args} />
+const Template: Story<iNavbar> = (args) => (
+  <ChakraProvider theme={theme}>
+    <Navbar {...args} />
+  </ChakraProvider>
+)
 
 export const FirstStory = Template.bind({})
+
+FirstStory.args = {
+  step: '1',
+}

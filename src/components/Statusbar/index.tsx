@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, VStack } from '@chakra-ui/react'
-import { Step1, Step2, Step3, Step4 } from '../../assets/svgs/Statusbar'
-
+import { Step4 } from '../../assets/svgs/Statusbar/Step4'
 export interface iStatusbar {
   step?: string
 }
@@ -9,10 +8,7 @@ export interface iStatusbar {
 export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
   return (
     <VStack>
-      {step === '1' && <Step1 />}
-      {step === '2' && <Step2 />}
-      {step === '3' && <Step3 />}
-      {step === '4' && <Step4 />}
+      <Step4 />
     </VStack>
   )
 }

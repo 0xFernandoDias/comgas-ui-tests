@@ -21,6 +21,8 @@ export const Checkout: React.FC<iCheckout> = ({ sendData }) => {
 
   function handleClick() {
     setShowModal(!showModal)
+
+    console.log(state)
   }
 
   function goBack() {

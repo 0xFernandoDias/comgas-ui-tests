@@ -57,7 +57,7 @@ export const ZipCode: React.FC<iZipCode> = ({
           onChange={(e) => setZipCode(e.target.value)}
         />
       </FormControl>
-      <Button text="Continuar" onClick={zipCode !== '' && goForward} />
+      <Button text="Continuar" onClick={goForward} />
       <Button text="Voltar" onClick={goBack} />
     </VStack>
   )

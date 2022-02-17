@@ -104,7 +104,7 @@ export const Register: React.FC<iRegisterProps> = ({
       <Button
         text="Próximo"
         disabled={initialRegisterState}
-        onClick={!isEmpty && goForward}
+        onClick={goForward}
       />
       <Button text="Voltar" onClick={goBack} />
     </VStack>
