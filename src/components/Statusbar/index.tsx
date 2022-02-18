@@ -1,15 +1,21 @@
-import React from 'react'
-import { Box, VStack } from '@chakra-ui/react'
-import { Step1, Step2, Step3, Step4 } from '../../assets/svgs/Statusbar'
+import React, { createElement } from 'react'
+import { VStack } from '@chakra-ui/react'
+import { steps } from '../../assets/svgs/Statusbar/index'
 
 export interface iStatusbar {
   step?: string
 }
 
 export const Statusbar: React.FC<iStatusbar> = ({ step }) => {
+  function currentStep () {
+    if (step) {
+      return createElement(steps.get(step))
+    }
+  }
+
   return (
     <VStack>
-      < Step1/>
+      {currentStep()}
     </VStack>
   )
 }
