@@ -102,12 +102,12 @@ export const Register: React.FC<iRegisterProps> = ({
         </Box>
       </FormControl>
       <Flex align="center" justify="center" gap='16px' w="100%">
+        <Button text="Voltar" onClick={goBack} />
         <Button
           text="Próximo"
           disabled={initialRegisterState}
           onClick={goForward}
         />
-        <Button text="Voltar" onClick={goBack} />
       </Flex>
     </VStack>
   )

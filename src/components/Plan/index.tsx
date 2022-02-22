@@ -29,8 +29,8 @@ export const Plan: React.FC<iPlanProps> = ({ plan, goBack, goForward }) => {
       <List items={items} />
       <Price price={price} />
       <Flex align="center" justify="center" gap='16px'>
-        <Button text="Contratar esse pacote" onClick={goForward} />
         <Button text="Voltar" onClick={goBack}/>
+        <Button text="Contratar esse pacote" onClick={goForward} />
       </Flex>
     </VStack>
   )

@@ -58,8 +58,8 @@ export const ZipCode: React.FC<iZipCode> = ({
         />
       </FormControl>
       <Flex align="center" justify="center" gap='16px' w="100%">
-        <Button text="Continuar" onClick={goForward} />
         <Button text="Voltar" onClick={goBack} />
+        <Button text="Continuar" onClick={goForward} />
       </Flex>
     </VStack>
   )
