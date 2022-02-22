@@ -66,7 +66,6 @@ const styles = {
     body: {
       maxHeight: '80%',
       maxWidth: '50%',
-      display: 'flex',
       justifyContent: 'center',
       margin: 'auto auto auto auto',
       padding: '0',

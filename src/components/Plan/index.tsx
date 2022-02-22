@@ -1,6 +1,6 @@
 import React from 'react'
 import { iPlan } from '../../contexts/FormContext/interfaces'
-import { Box, VStack, Image } from '@chakra-ui/react'
+import { Box, VStack, Image, Flex } from '@chakra-ui/react'
 import { TitleSubtitle } from '../TitleSubtitle'
 import { List } from '../List'
 import { Price } from '../Price'
@@ -28,8 +28,10 @@ export const Plan: React.FC<iPlanProps> = ({ plan, goBack, goForward }) => {
       </Box>
       <List items={items} />
       <Price price={price} />
-      <Button text="Contratar esse pacote" onClick={goForward} />
-      <Button text="Voltar" onClick={goBack} />
+      <Flex align="center" justify="center" gap='16px'>
+        <Button text="Contratar esse pacote" onClick={goForward} />
+        <Button text="Voltar" onClick={goBack}/>
+      </Flex>
     </VStack>
   )
 }

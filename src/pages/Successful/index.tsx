@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from '../../contexts/FormContext'
-import { VStack } from '@chakra-ui/react'
+import { Flex, VStack } from '@chakra-ui/react'
 import { ImgText } from '../../components/ImgText'
 import { Button } from '../../components'
 import { Page } from '../../layouts'
@@ -30,8 +30,10 @@ export const Successful: React.FC = () => {
           text="A Comgas já está na sua região!"
           description="Você sabia que 80% dos seus vizinhos já são clientes Comgas?"
         />
-        <Button text="Continuar" onClick={goForward} />
-        <Button text="Voltar" onClick={goBack} />
+        <Flex align="center" justify="center" gap='16px' w="100%">
+          <Button text="Continuar" onClick={goForward} />
+          <Button text="Voltar" onClick={goBack} />
+        </Flex>
       </VStack>
     </Page>
   ) : (
