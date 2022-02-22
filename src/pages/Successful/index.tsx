@@ -31,8 +31,8 @@ export const Successful: React.FC = () => {
           description="Você sabia que 80% dos seus vizinhos já são clientes Comgas?"
         />
         <Flex align="center" justify="center" gap='16px' w="100%">
-          <Button text="Continuar" onClick={goForward} />
           <Button text="Voltar" onClick={goBack} />
+          <Button text="Continuar" onClick={goForward} />
         </Flex>
       </VStack>
     </Page>

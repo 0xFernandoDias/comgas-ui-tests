@@ -76,8 +76,8 @@ export const Checkout: React.FC<iCheckout> = ({ sendData }) => {
           {zipCode}
         </Box>
         <Flex align="center" justify="center" gap='16px' w="100%">
-          <Button text="Assinar contrato" onClick={handleClick} />
           <Button text="Voltar" onClick={goBack} />
+          <Button text="Assinar contrato" onClick={handleClick} />
         </Flex>
         {showModal && (
           <Modal
