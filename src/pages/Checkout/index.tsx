@@ -33,7 +33,7 @@ export const Checkout: React.FC<iCheckout> = ({ sendData }) => {
     name === '' && navigate('/installation')
   }, [])
   return name !== '' ? (
-    <Page step="5">
+    <Page step="4">
       <Box>
         <Box textStyle="title" color="brand.primary.pure" pt="40pt" pb="26px">
           Revise seus pacotes
