@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { iRegister, tDispatch } from '../../contexts/FormContext/interfaces'
 import { FormActions } from '../../contexts/FormContext'
-import { Box, FormControl, FormLabel, Input, VStack } from '@chakra-ui/react'
+import { Box, FormControl, FormLabel, Input, VStack, Flex } from '@chakra-ui/react'
 import { ImgText } from '../ImgText'
 import { Button } from '../Button'
 
@@ -101,12 +101,14 @@ export const Register: React.FC<iRegisterProps> = ({
           />
         </Box>
       </FormControl>
-      <Button
-        text="Próximo"
-        disabled={initialRegisterState}
-        onClick={goForward}
-      />
-      <Button text="Voltar" onClick={goBack} />
+      <Flex align="center" justify="center" gap='16px' w="100%">
+        <Button
+          text="Próximo"
+          disabled={initialRegisterState}
+          onClick={goForward}
+        />
+        <Button text="Voltar" onClick={goBack} />
+      </Flex>
     </VStack>
   )
 }

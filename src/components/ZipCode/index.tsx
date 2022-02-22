@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FormControl, FormLabel, Input, VStack } from '@chakra-ui/react'
+import { Flex, FormControl, FormLabel, Input, VStack } from '@chakra-ui/react'
 import { FormActions } from '../../contexts/FormContext'
 import { tDispatch } from '../../contexts/FormContext/interfaces'
 import { ImgText } from '../ImgText'
@@ -57,8 +57,10 @@ export const ZipCode: React.FC<iZipCode> = ({
           onChange={(e) => setZipCode(e.target.value)}
         />
       </FormControl>
-      <Button text="Continuar" onClick={goForward} />
-      <Button text="Voltar" onClick={goBack} />
+      <Flex align="center" justify="center" gap='16px' w="100%">
+        <Button text="Continuar" onClick={goForward} />
+        <Button text="Voltar" onClick={goBack} />
+      </Flex>
     </VStack>
   )
 }

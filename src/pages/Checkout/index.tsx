@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FormActions, useForm } from '../../contexts/FormContext'
-import { Box, HStack, Image } from '@chakra-ui/react'
+import { Box, Flex, HStack, Image } from '@chakra-ui/react'
 import { Button, Modal } from '../../components'
 import { useNavigate } from 'react-router-dom'
 import { List } from '../../components/List'
@@ -75,9 +75,10 @@ export const Checkout: React.FC<iCheckout> = ({ sendData }) => {
         <Box textStyle="description" pb="32px">
           {zipCode}
         </Box>
-
-        <Button text="Assinar contrato" onClick={handleClick} />
-        <Button text="Voltar" onClick={goBack} />
+        <Flex align="center" justify="center" gap='16px' w="100%">
+          <Button text="Assinar contrato" onClick={handleClick} />
+          <Button text="Voltar" onClick={goBack} />
+        </Flex>
         {showModal && (
           <Modal
             sendData={sendData}
