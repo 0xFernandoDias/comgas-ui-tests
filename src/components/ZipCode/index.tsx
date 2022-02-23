@@ -5,6 +5,7 @@ import { FormActions } from '../../contexts/FormContext'
 import { tDispatch } from '../../contexts/FormContext/interfaces'
 import { ImgText } from '../ImgText'
 import { Button } from '../Button'
+import { useQuery } from 'react-query'
 
 export interface iZipCode {
   zipCode: string
@@ -28,20 +29,35 @@ export const ZipCode: React.FC<iZipCode> = ({
     props.zipCode !== '' && setZipCode(props.zipCode)
   }, [])
 
+  function zipCodeValidation() {
+    const { isError } = useQuery('zipCode', () => {
+      const URL = `viacep.com.br/ws/${zipCode}/json/`
+
+      fetch(URL)
+    })
+
+    return { isError }
+  }
+
   function goForward() {
-    zipCode !== '' &&
-      dispatch({
-        type: props.setZipCode,
-        payload: zipCode,
-      })
-    navigate(nextPage)
+    const { isError } = zipCodeValidation()
+
+    if (zipCode !== '' && zipCode.length > 8) {
+      if (isError) {
+        navigate(unavailable)
+      } else {
+        dispatch({
+          type: props.setZipCode,
+          payload: zipCode,
+        })
+        navigate(nextPage)
+      }
+    }
   }
 
   function goBack() {
     navigate('/register')
   }
-
-  // validation /buscaCep > unavailable
 
   return (
     <VStack>
@@ -57,9 +73,13 @@ export const ZipCode: React.FC<iZipCode> = ({
           onChange={(e) => setZipCode(e.target.value)}
         />
       </FormControl>
-      <Flex align="center" justify="center" gap='16px' w="100%">
+      <Flex align="center" justify="center" gap="16px" w="100%">
         <Button text="Voltar" onClick={goBack} />
-        <Button text="Continuar" onClick={goForward} />
+        <Button
+          text="Continuar"
+          onClick={goForward}
+          disabled={zipCode === '' && zipCode.length < 8}
+        />
       </Flex>
     </VStack>
   )
