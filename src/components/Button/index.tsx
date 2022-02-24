@@ -25,7 +25,6 @@ export const Button: React.FC<iButton> = ({
       alignItems="center"
       cursor="pointer"
       mb="20px"
-      data-testid="button"
     >
       {text}
     </Box>
