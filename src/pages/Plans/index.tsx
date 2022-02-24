@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Box, HStack, Image } from '@chakra-ui/react'
 import { PlanCard } from '../../components/PlanCard'
