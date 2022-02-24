@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/react'
 export interface iButton {
   text: string
   disabled?: boolean
-  onClick: any
+  onClick?: any
 }
 
 export const Button: React.FC<iButton> = ({
@@ -25,6 +25,7 @@ export const Button: React.FC<iButton> = ({
       alignItems="center"
       cursor="pointer"
       mb="20px"
+      data-testid="button"
     >
       {text}
     </Box>
